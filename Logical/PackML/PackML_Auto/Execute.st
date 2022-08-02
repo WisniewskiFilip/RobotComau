@@ -1,3 +1,18 @@
+//   General conception of this code
+//  assainging binary values to each object 
+//	screw      -001 - 1
+//  screw pad  -010 - 2
+//  wrench     -100 - 4
+//  therefore we can assing to gAimPose table values from 0-7 ( sum must equal 7) in order to
+//  easly differentiate what kind of object we need to move into aim pose.
+//  for example if we see 6 -> 110 we know that we have to move screw pad and wrench to this pose
+//	
+//  order of moves is defined by order of numbers in Index 
+
+
+
+
+
 
 ACTION Execute: 
 	IF MpPackMLStateIsActive(gPackMLCore,
@@ -5,7 +20,7 @@ ACTION Execute:
 		1) THEN
 
 		PackML_State := 'EXECUTE';
-		
+
 		
 		CASE Step OF
 			ROBOTCTRL_CALCULATE:
@@ -20,8 +35,6 @@ ACTION Execute:
 					MpRoboArm6Axis_0.MoveProgram:=1;
 					IF MpRoboArm6Axis_0.MoveDone THEN
 						MpRoboArm6Axis_0.MoveProgram:=FALSE;
-						(*Step:=ROBOTCTRL_CALCULATE;*)
-						(*Step_State := 'Complite';*)
 						MpPackMLStateComplete(gPackMLCore, 1);
 					END_IF
 				END_IF;
@@ -31,7 +44,6 @@ ACTION Execute:
 				//assigning values to P1 and P1up
 				FOR x:=0  TO SizeOfArray DO
 					IF gActPos[x]=Index[y] THEN
-						pom[3]:=1;
 						P1.Orient.Angle1:=gRobPos[x].Orient.Angle1;
 						P1.Orient.Angle2:=gRobPos[x].Orient.Angle2;
 						P1.Orient.Angle3:=gRobPos[x].Orient.Angle3;
@@ -44,47 +56,25 @@ ACTION Execute:
 						P1up.Pos.X:=gRobPos[x].Pos.X;
 						P1up.Pos.Y:=gRobPos[x].Pos.Y;
 						P1up.Pos.Z:=gRobPos[x].Pos.Z+50;
-					
-					
-					
 					END_IF;	
 				END_FOR;
 				Step:=ROBOTCTRL_CALCULATE_P2;
 				Step_State := 'CALCULATE_P2';
-
-//			ROBOTCTRL_CALCULATE_P2:	
-//				//assigning values to P2 and P2up
-//				FOR x:=0  TO SizeOfArray DO
-//					IF gAimPos[x]=Index[y] THEN
-//						pom[4]:=1;
-//						P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
-//						P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
-//						P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
-//						P2.Pos.X:=gRobPos[x].Pos.X;
-//						P2.Pos.Y:=gRobPos[x].Pos.Y;
-//						P2.Pos.Z:=gRobPos[x].Pos.Z;
-//						P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
-//						P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
-//						P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
-//						P2up.Pos.X:=gRobPos[x].Pos.X;
-//						P2up.Pos.Y:=gRobPos[x].Pos.Y;
-//						P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
-//					
-//					
-//					END_IF;	
-//				END_FOR;
-//				P1P2_Ok:=1; // this flag means that new P1 and new P2 have been assigned  
-//				Step:=ROBOTCTRL_CALCULATE;
-				//				Step_State := 'CALCULATE';
+				
 			ROBOTCTRL_CALCULATE_P2:	
 				FOR x:=0 TO SizeOfArray DO
+					//copig values 
 					gAimPos1[x]:=gAimPos[x];
 				END_FOR;
 				FOR x:=0 TO SizeOfArray DO
+					//reseting maps 
 					Aim1[x]:=FALSE;
 					Aim2[x]:=FALSE;
 					Aim4[x]:=FALSE;
 				END_FOR;
+				//Creating maps conteining positions of each element 
+				//by substracting corresponding value of element 
+				//AND checing IF its greater OR equal TO zero
 				FOR z:=0 TO IndexSize DO
 					IF Index[z]=4 THEN
 						FOR x:=0 TO SizeOfArray DO
@@ -238,6 +228,7 @@ ACTION Execute:
 				//////////////////////// command execute
 				MpRoboArm6Axis_0.MoveProgram:=1;
 				IF MpRoboArm6Axis_0.MoveDone THEN
+					//second move 
 					MpRoboArm6Axis_0.MoveProgram:=0;
 					///////////////////////P1
 					P1.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
@@ -268,6 +259,7 @@ ACTION Execute:
 					//////////////////////// command execute
 					MpRoboArm6Axis_0.MoveProgram:=1;
 					IF MpRoboArm6Axis_0.MoveDone THEN
+						//third move
 						MpRoboArm6Axis_0.MoveProgram:=0;
 						///////////////////////P1
 						P1.Orient.Angle1:=gSwapPoses[2].Orient.Angle1;
