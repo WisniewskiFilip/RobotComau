@@ -4,6 +4,7 @@ VAR
 	gActPos : ARRAY[0..13] OF INT := [2(0),1,2(0),2,0,4,6(0)];
 	gAimPos1 : ARRAY[0..13] OF INT := [5(0),1,0,2,5(0),4];
 	gAimPos : ARRAY[0..13] OF INT := [5(0),1,0,2,5(0),4];
+	gSwapPoses : ARRAY[0..2] OF McPointType;
 	gElementsArray : ARRAY[0..13] OF USINT;
 	gIsPosGood : ARRAY[0..13] OF BOOL := [11(0),3(1)];
 	gRobPos : ARRAY[0..13] OF McPointType := [(Pos:=(X:=510,Y:=280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=-280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=300,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-300,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0))];
