@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gFileManagerUI" Type="mpfilemanagerui">
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gFileManagerUI_R" Type="mpfilemanagerui" />
+</Configuration>

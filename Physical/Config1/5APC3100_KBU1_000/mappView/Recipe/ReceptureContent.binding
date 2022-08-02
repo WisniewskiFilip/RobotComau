@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="ReceptureContent_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:name" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TextInput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:Screw" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="RadioButton3" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:Wrench" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="RadioButton2" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:ScrewWasher" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="bolt" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="RadioButtonGroup1" attribute="selectedIndex" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="ImageList1" attribute="selectedIndex" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:tabInfo.Name" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="tiName" attribute="stringValue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:tableConfig" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="Table1" attribute="tableConfiguration" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:MpFileMngConnectR.File.Refresh" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="btnRefresh" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:tabInfo.SelectedRow" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="Table1" attribute="selectedRow" />
+</Binding>
+
+
+
+
+
+
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[11]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare11" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[12]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare12" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[13]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare13" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[10]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare10" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[9]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare9" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[8]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare8" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[7]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare0" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[3]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[4]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[5]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gIsPosGood[6]" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="TgBtnSquare6" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:PriorytetS" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="PrioritetS" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:PriorytetSW" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="PrioritetSW" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipe:PriorytetW" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="PrioritetS2" attribute="value" />
+</Binding>
+
+
+
+
+
+
+
+
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="LOADBTN" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ReceptureContent" widgetRefId="SaveRecipeBTN" attribute="enable" />
+</Binding>
+</Bindings>
+</BindingsSet>

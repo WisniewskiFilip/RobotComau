@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gAlarmXCore0" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="Error" />
+        <Property ID="Message" Value="Robot Error" />
+        <Property ID="Code" Value="1" />
+        <Selector ID="Behavior" Value="LevelMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::Alarms:test_error" />
+            <Selector ID="HighLimitEnable" Value="Static">
+              <Property ID="Limit" Value="0.7" />
+              <Property ID="LimitText" Value="ERROR MAKS NAPRAW" />
+            </Selector>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="TooManyBolts" />
+        <Property ID="Message" Value="{&amp;LimitText}" />
+        <Property ID="Code" Value="111" />
+        <Selector ID="Behavior" Value="LevelMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::DetectedScrew" />
+            <Selector ID="LowLimitEnable" Value="Static">
+              <Property ID="Limit" Value="0.5" />
+              <Property ID="LimitText" Value="Nie wykryto śrubki" />
+            </Selector>
+            <Selector ID="HighLimitEnable" Value="Static">
+              <Property ID="Limit" Value="1.5" />
+              <Property ID="LimitText" Value="Wykryto za dużo śrubek" />
+            </Selector>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="TooManyWrenches" />
+        <Property ID="Message" Value="{&amp;LimitText}" />
+        <Property ID="Code" Value="112" />
+        <Selector ID="Behavior" Value="LevelMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::DetectedWrench" />
+            <Selector ID="LowLimitEnable" Value="Static">
+              <Property ID="Limit" Value="0.5" />
+              <Property ID="LimitText" Value="Nie wykryto klucza" />
+            </Selector>
+            <Selector ID="HighLimitEnable" Value="Static">
+              <Property ID="Limit" Value="1.5" />
+              <Property ID="LimitText" Value="Wykryto za dużo kluczy" />
+            </Selector>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="TooManyBoltWashers" />
+        <Property ID="Message" Value="{&amp;LimitText}" />
+        <Property ID="Code" Value="114" />
+        <Selector ID="Behavior" Value="LevelMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::DetectedScrewWasher" />
+            <Selector ID="LowLimitEnable" Value="Static">
+              <Property ID="Limit" Value="0.5" />
+              <Property ID="LimitText" Value="Nie wykryto podkładki" />
+            </Selector>
+            <Selector ID="HighLimitEnable" Value="Static">
+              <Property ID="Limit" Value="1.5" />
+              <Property ID="LimitText" Value="Wykryto za dużo podkładek" />
+            </Selector>
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="TooManySquares" />
+        <Property ID="Message" Value="{&amp;LimitText}" />
+        <Property ID="Code" Value="119" />
+        <Selector ID="Behavior" Value="LevelMonitoring">
+          <Group ID="Monitoring">
+            <Property ID="MonitoredPV" Value="::DetectedSquares" />
+            <Selector ID="LowLimitEnable" Value="Static">
+              <Property ID="Limit" Value="6.5" />
+              <Property ID="LimitText" Value="Wykryto za mało podstawek" />
+            </Selector>
+            <Selector ID="HighLimitEnable" Value="Static">
+              <Property ID="Limit" Value="7.5" />
+              <Property ID="LimitText" Value="Wykryto za dużo podstawek" />
+            </Selector>
+          </Group>
+        </Selector>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

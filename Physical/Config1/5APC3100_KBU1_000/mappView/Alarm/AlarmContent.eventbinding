@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="AlarmContent_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<EventBinding id="EventBinding_1009977">
+			<Source xsi:type="clientSystem.Event" event="ContentLoaded" />
+			<EventHandler condition="contentId = ManualContent">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Comau:MpRoboArm6Axis_0.ErrorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="contentId = MainContent">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Comau:MpRoboArm6Axis_0.ErrorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="contentId = AutoContent">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Comau:MpRoboArm6Axis_0.ErrorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="contentId = AuditContent">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Alarms:test_errorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="contentId = PackMLContent">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Alarms:test_errorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="contentId = ReceptureContent">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Comau:MpRoboArm6Axis_0.ErrorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="contentId = UsersContent">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Comau:MpRoboArm6Axis_0.ErrorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="contentId = FilesContent">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Comau:MpRoboArm6Axis_0.ErrorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_btnAckClick">
+			<Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="AlarmContent" widgetRefId="btnAcknowledge" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Comau:MpRoboArm6Axis_0.ErrorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.AlarmList.Action" contentRefId="AlarmContent" widgetRefId="AlarmList1">
+						<Method xsi:type="widgets.brease.AlarmList.Action.Acknowledge" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="EventBinding_btnAckAllClick">
+			<Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="AlarmContent" widgetRefId="btnAcknowledgeAll" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Comau:MpRoboArm6Axis_0.ErrorReset">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="widgets.brease.AlarmList.Action" contentRefId="AlarmContent" widgetRefId="AlarmList1">
+						<Method xsi:type="widgets.brease.AlarmList.Action.AcknowledgeAll" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+	</Bindings>
+</EventBindingSet>

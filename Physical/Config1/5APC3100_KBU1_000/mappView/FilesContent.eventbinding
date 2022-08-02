@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="FilesContent_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="EventBinding_9">
+      <Source xsi:type="opcUa.Event" refId="::File_explo:messageType" event="ValueChanged" />
+      <Operand datatype="ANY_STRING" name="GetMessage">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::File_explo:messageType">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="GetMessage =&quot;DELETE&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OKCancel" message="Czy chcesz usunac plik?" header="UWAGA" />
+          </Target>
+          <Result>
+            <ResultHandler condition="result=4">
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Confirm">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+            <ResultHandler condition="result=8">
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Cancel">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+          </Result>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="GetMessage =&quot;OVERWRITE&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OKCancel" message="Czy chcesz nadpisac plik?" header="UWAGA" />
+          </Target>
+          <Result>
+            <ResultHandler condition="result=4">
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Confirm">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+            <ResultHandler condition="result=8">
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Cancel">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+          </Result>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="GetMessage =&quot;BUSY&quot;">
+        <Action>
+          <Target xsi:type="clientSystem.Action">
+            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OKCancel" message="Czy chcesz nadpisac plik?" header="UWAGA" />
+          </Target>
+          <Result>
+            <ResultHandler condition="result=4">
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Confirm">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+            <ResultHandler condition="result=8">
+              <Action>
+                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Cancel">
+                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+                </Target>
+              </Action>
+            </ResultHandler>
+          </Result>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_10">
+      <Source xsi:type="clientSystem.Event" event="ContentLoaded" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.File.Refresh">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

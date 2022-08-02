@@ -1,0 +1,5 @@
+VAR
+	ClearHistory : BOOL;
+	ClearHistoryOutput : DINT;
+	ClearHistoryStatus : BOOL;
+END_VAR

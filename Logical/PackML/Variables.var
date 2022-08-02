@@ -1,0 +1,40 @@
+VAR
+	AimIsGood : BOOL := FALSE;
+	cartezianVSjog : BOOL; (*Wybór miedzy sterowaniem we wspólrzednych wewnetrznych - 0 / zewnêtrznych - 1 *)
+	cmdContinue : BOOL;
+	cmdInterrupt : BOOL;
+	diAck : BOOL;
+	diAuto : BOOL;
+	diExecute : BOOL;
+	diManual : BOOL;
+	diReset : BOOL;
+	diSemiAuto : BOOL;
+	diStart : BOOL;
+	diStop : BOOL;
+END_VAR
+VAR CONSTANT
+	
+	IndexSize : INT := 3;
+END_VAR
+VAR
+	MpRoboArm6Axis_0 : MpRoboArm6Axis;
+	P1P2_Ok : BOOL := FALSE;
+	RoboParameters : MpRoboArm6AxisParType;
+END_VAR
+VAR CONSTANT
+	SizeOfArray : INT := 13;
+END_VAR
+VAR
+	Step : {REDUND_UNREPLICABLE} Step_typ := (0);
+	VelocityQ : REAL;
+	VelocityQ1 : REAL; (*Przypisanie predkosci do parametru 1 w zale¿nosci od wyboru wspólrzednych*)
+	VelocityQ2 : REAL; (*Przypisanie predkosci do parametru 2 w zale¿nosci od wyboru wspólrzednych*)
+	VelocityQ3 : REAL; (*Przypisanie predkosci do parametru 3 w zale¿nosci od wyboru wspólrzednych*)
+	VelocityQ4 : REAL; (*Przypisanie predkosci do parametru 4 w zale¿nosci od wyboru wspólrzednych*)
+	VelocityQ5 : REAL; (*Przypisanie predkosci do parametru 5 w zale¿nosci od wyboru wspólrzednych*)
+	VelocityQ6 : REAL; (*Przypisanie predkosci do parametru 6 w zale¿nosci od wyboru wspólrzednych*)
+	Step_State : STRING[80];
+	PackML_State : STRING[80];
+	VisionCalcDone : BOOL;
+	x : INT := 0;
+END_VAR

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gPackMLCore" Type="mppackmlcore">
+    <Group ID="Core">
+      <Property ID="StartupActiveMode" Value="1" />
+      <Property ID="StartupActiveState" Value="2" />
+      <Selector ID="Auditing" Value="MpAudit" />
+    </Group>
+    <Group ID="Modes">
+      <Group ID="Mode[1]">
+        <Property ID="ModeID" Value="1" />
+        <Property ID="Name" Value="Auto" />
+        <Selector ID="State[5]" Value="0" />
+        <Selector ID="State[13]" Value="0" />
+        <Selector ID="State[14]" Value="0" />
+      </Group>
+      <Group ID="Mode[2]">
+        <Property ID="ModeID" Value="2" />
+        <Property ID="Name" Value="SemiAuto" />
+      </Group>
+      <Group ID="Mode[3]">
+        <Property ID="ModeID" Value="3" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+</Configuration>
