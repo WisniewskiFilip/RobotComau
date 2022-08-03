@@ -21,4 +21,11 @@
       <Property ID="Role[1]" Value="Operator" />
     </Group>
   </Element>
+  <Element ID="admin" Type="User">
+    <Property ID="UserID" Value="2" />
+    <Property ID="Password" Value="FiArjKoT2OOvM0ZPNJm1KwRC/WYbea1BuNb64atDe7ybX3L+eDo=" Description="admin" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+    </Group>
+  </Element>
 </Configuration>

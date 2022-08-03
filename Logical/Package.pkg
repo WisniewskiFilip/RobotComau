@@ -6,15 +6,8 @@
     <Object Type="File" Description="Global variables">Global.var</Object>
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Package">mappView</Object>
-    <Object Type="Program" Language="IEC">Alarms</Object>
-    <Object Type="Program" Language="IEC">Elements_detection</Object>
-    <Object Type="Package">PackML</Object>
-    <Object Type="File">HOME.st</Object>
-    <Object Type="File">Robotic.st</Object>
-    <Object Type="Package">Sources</Object>
-    <Object Type="Program" Language="IEC">File_explorer</Object>
-    <Object Type="Program" Language="IEC">Recipe</Object>
-    <Object Type="Package">AuditPckg</Object>
-    <Object Type="Program" Language="IEC">AlarmClearHistory</Object>
+    <Object Type="Package">Robot</Object>
+    <Object Type="Package">Services</Object>
+    <Object Type="Package">Camera</Object>
   </Objects>
 </Package>
