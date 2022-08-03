@@ -26,7 +26,7 @@ ACTION Execute:
 			ROBOTCTRL_CALCULATE:	
 				//blocks which can be used as buffor
 				FOR x:=0 TO SizeOfArray DO 
-					IF  gActPos[x]=0 AND gIsPosGood=TRUE THEN
+					IF  gActPos[x]=0 AND gIsPosGood[x]=TRUE THEN
 						gPosBuffor[x]:=TRUE;
 					END_IF;
 				END_FOR;
@@ -235,16 +235,13 @@ ACTION Execute:
 						gSwapPoses[HelpfulInt].Pos.X:=gRobPos[x].Pos.X;
 						gSwapPoses[HelpfulInt].Pos.Y:=gRobPos[x].Pos.Y;
 						gSwapPoses[HelpfulInt].Pos.Z:=gRobPos[x].Pos.Z;
+						EXIT;
 					END_IF
 				END_FOR;
 				
 				FOR x:=0 TO SizeOfArray DO 
 					gSwapMap[x]:=FALSE;
 				END_FOR;
-				
-				
-				
-				
 				Step:=ROBOTCTRL_SWAP_MOVE;
 				
 				
@@ -259,7 +256,7 @@ ACTION Execute:
 				P1.Pos.Z:=gSwapPoses[0].Pos.Z;
 				P1up.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
 				P1up.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
-				P1up.Orient.Angle3:=gSwapPoses[0]].Orient.Angle3;
+				P1up.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
 				P1up.Pos.X:=gSwapPoses[0].Pos.X;
 				P1up.Pos.Y:=gSwapPoses[0].Pos.Y;
 				P1up.Pos.Z:=gSwapPoses[0].Pos.Z+50;
