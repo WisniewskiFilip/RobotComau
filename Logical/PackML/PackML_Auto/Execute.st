@@ -23,9 +23,17 @@ ACTION Execute:
 
 		
 		CASE Step OF
-			ROBOTCTRL_CALCULATE:
-				//checking if any move is needed and if all moves are done 
-				IF	P1P2_Ok THEN
+			ROBOTCTRL_CALCULATE:	
+				//blocks which can be used as buffor
+				FOR x:=0 TO SizeOfArray DO 
+					IF  gActPos[x]=0 AND gIsPosGood=TRUE THEN
+						gPosBuffor[x]:=TRUE;
+					END_IF;
+				END_FOR;
+				
+				IF gSwapFlag THEN
+					Step:=ROBOTCTRL_SWAP;
+				ELSIF P1P2_Ok THEN
 					Step:=ROBOTCTRL_IS_MOVE_NEEDED;
 				ELSIF y<IndexSize THEN
 					Step:=ROBOTCTRL_CALCULATE_P1;
@@ -37,6 +45,7 @@ ACTION Execute:
 						MpRoboArm6Axis_0.MoveProgram:=FALSE;
 						MpPackMLStateComplete(gPackMLCore, 1);
 					END_IF
+					
 				END_IF;
 				
 				
@@ -109,61 +118,62 @@ ACTION Execute:
 					END_FOR;
 				
 				
-							//assigning values to P2 and P2up
-							IF Index[y]=4 THEN
-								FOR x:=0  TO SizeOfArray DO
-									IF Aim4[x]=TRUE THEN
-										P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
-										P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
-										P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
-										P2.Pos.X:=gRobPos[x].Pos.X;
-										P2.Pos.Y:=gRobPos[x].Pos.Y;
-										P2.Pos.Z:=gRobPos[x].Pos.Z;
-										P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
-										P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
-										P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
-										P2up.Pos.X:=gRobPos[x].Pos.X;
-										P2up.Pos.Y:=gRobPos[x].Pos.Y;
-										P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
-										END_IF;
-										END_FOR;
-										ELSIF Index[y]=2 THEN
-										FOR x:=0  TO SizeOfArray DO
-											IF Aim2[x]=TRUE THEN	
-												P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
-												P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
-												P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
-												P2.Pos.X:=gRobPos[x].Pos.X;
-												P2.Pos.Y:=gRobPos[x].Pos.Y;
-												P2.Pos.Z:=gRobPos[x].Pos.Z;
-												P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
-												P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
-												P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
-												P2up.Pos.X:=gRobPos[x].Pos.X;
-												P2up.Pos.Y:=gRobPos[x].Pos.Y;
-												P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
-											END_IF;
-										END_FOR;			
-									ELSIF Index[y]=1 THEN
-										FOR x:=0  TO SizeOfArray DO
-											IF Aim1[x]=TRUE THEN	
-												P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
-												P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
-												P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
-												P2.Pos.X:=gRobPos[x].Pos.X;
-												P2.Pos.Y:=gRobPos[x].Pos.Y;
-												P2.Pos.Z:=gRobPos[x].Pos.Z;
-												P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
-												P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
-												P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
-												P2up.Pos.X:=gRobPos[x].Pos.X;
-												P2up.Pos.Y:=gRobPos[x].Pos.Y;
-												P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
-											END_IF;
-										END_FOR;			
-									END_IF;				
-									P1P2_Ok:=1; // this flag means that new P1 and new P2 have been assigned  
-									Step:=ROBOTCTRL_CALCULATE;
+					//assigning values to P2 and P2up
+				IF Index[y]=4 THEN
+					//moving in order defined in Index
+						FOR x:=0  TO SizeOfArray DO
+							IF Aim4[x]=TRUE THEN
+								P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+								P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+								P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+								P2.Pos.X:=gRobPos[x].Pos.X;
+								P2.Pos.Y:=gRobPos[x].Pos.Y;
+								P2.Pos.Z:=gRobPos[x].Pos.Z;
+								P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+								P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+								P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+								P2up.Pos.X:=gRobPos[x].Pos.X;
+								P2up.Pos.Y:=gRobPos[x].Pos.Y;
+								P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+								END_IF;
+							END_FOR;
+						ELSIF Index[y]=2 THEN
+						FOR x:=0  TO SizeOfArray DO
+							IF Aim2[x]=TRUE THEN	
+								P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+								P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+								P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+								P2.Pos.X:=gRobPos[x].Pos.X;
+								P2.Pos.Y:=gRobPos[x].Pos.Y;
+								P2.Pos.Z:=gRobPos[x].Pos.Z;
+								P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+								P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+								P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+								P2up.Pos.X:=gRobPos[x].Pos.X;
+								P2up.Pos.Y:=gRobPos[x].Pos.Y;
+								P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+							END_IF;
+						END_FOR;			
+					ELSIF Index[y]=1 THEN
+						FOR x:=0  TO SizeOfArray DO
+							IF Aim1[x]=TRUE THEN	
+								P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+								P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+								P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+								P2.Pos.X:=gRobPos[x].Pos.X;
+								P2.Pos.Y:=gRobPos[x].Pos.Y;
+								P2.Pos.Z:=gRobPos[x].Pos.Z;
+								P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+								P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+								P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+								P2up.Pos.X:=gRobPos[x].Pos.X;
+								P2up.Pos.Y:=gRobPos[x].Pos.Y;
+								P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+							END_IF;
+						END_FOR;			
+					END_IF;				
+					P1P2_Ok:=1; // this flag means that new P1 and new P2 have been assigned  
+					Step:=ROBOTCTRL_CALCULATE;
 
 			ROBOTCTRL_IS_MOVE_NEEDED:
 				//checking if actual and aim positions are not the same 
@@ -189,7 +199,7 @@ ACTION Execute:
 				//executing move procedure
 				MpRoboArm6Axis_0.MoveProgram:=1;
 				IF MpRoboArm6Axis_0.MoveDone THEN
-					//retaking assigning procedure with new object after finishing move 
+					//restarting assigning procedure with new object after finishing move 
 					MpRoboArm6Axis_0.MoveProgram:=0;
 					y:=y+1;
 					P1P2_Ok:=0;
@@ -197,7 +207,48 @@ ACTION Execute:
 					Step_State := 'CALCULATE';
 					
 				END_IF 
-			ROBOTCTRL_SWAP:
+				
+			ROBOTCTRL_SWAP:	
+				//todo
+				gSwapFlag:=FALSE;
+				HelpfulInt:=0;
+				FOR x:=0 TO SizeOfArray DO 
+					IF gSwapMap[x] THEN
+						gSwapPoses[HelpfulInt].Orient.Angle1:=gRobPos[x].Orient.Angle1;
+						gSwapPoses[HelpfulInt].Orient.Angle2:=gRobPos[x].Orient.Angle2;
+						gSwapPoses[HelpfulInt].Orient.Angle3:=gRobPos[x].Orient.Angle3;
+						gSwapPoses[HelpfulInt].Pos.X:=gRobPos[x].Pos.X;
+						gSwapPoses[HelpfulInt].Pos.Y:=gRobPos[x].Pos.Y;
+						gSwapPoses[HelpfulInt].Pos.Z:=gRobPos[x].Pos.Z;
+						HelpfulInt:=HelpfulInt + 1;
+					END_IF
+				END_FOR;
+				//gSwapMap should only have 2 values equal to TRUE therefore HelpfulInt should equal to 2
+				//but just in case it is better to assign 2 to HelpfulInt
+				HelpfulInt:=2;
+				
+				FOR x:=0 TO SizeOfArray DO 
+					IF gPosBuffor[x] THEN
+						gSwapPoses[HelpfulInt].Orient.Angle1:=gRobPos[x].Orient.Angle1;
+						gSwapPoses[HelpfulInt].Orient.Angle2:=gRobPos[x].Orient.Angle2;
+						gSwapPoses[HelpfulInt].Orient.Angle3:=gRobPos[x].Orient.Angle3;
+						gSwapPoses[HelpfulInt].Pos.X:=gRobPos[x].Pos.X;
+						gSwapPoses[HelpfulInt].Pos.Y:=gRobPos[x].Pos.Y;
+						gSwapPoses[HelpfulInt].Pos.Z:=gRobPos[x].Pos.Z;
+					END_IF
+				END_FOR;
+				
+				FOR x:=0 TO SizeOfArray DO 
+					gSwapMap[x]:=FALSE;
+				END_FOR;
+				
+				
+				
+				
+				Step:=ROBOTCTRL_SWAP_MOVE;
+				
+				
+			ROBOTCTRL_SWAP_MOVE:
 				//first move 
 				///////////////////////P1
 				P1.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;

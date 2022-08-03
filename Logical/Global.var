@@ -9,6 +9,7 @@ VAR
 	gIsPosGood : ARRAY[0..13] OF BOOL := [11(0),3(1)];
 	gRobPos : ARRAY[0..13] OF McPointType := [(Pos:=(X:=510,Y:=280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=-280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=300,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-300,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0))];
 	gSafety : gSafeType;
+	gSwapMap : ARRAY[0..13] OF BOOL;
 	gSquareArray : ARRAY[0..13] OF BOOL; (*1 IF is square in i position*)
 	HOME : McPointType := (Pos:=(X:=435.9,Y:=0,Z:=685),Orient:=(Angle1:=0,Angle2:=90,Angle3:=0));
 	MpPackMLCore_0 : MpPackMLCore;
@@ -32,10 +33,12 @@ VAR
 	PixelRange_0 : PixelCounterLimits;
 	doVisError : BOOL;
 	DetectedSquares : USINT;
+	gSwapFlag : BOOL;
 	y : USINT;
 	DetectedWrench : USINT;
 	DetectedScrewWasher : USINT;
 	DetectedScrew : USINT;
+	gPosBuffor : ARRAY[0..13] OF BOOL;
 	Index : ARRAY[0..2] OF INT := [1,2,4];
 	Aim1 : ARRAY[0..13] OF BOOL;
 	Aim2 : ARRAY[0..13] OF BOOL;

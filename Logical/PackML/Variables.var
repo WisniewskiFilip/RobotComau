@@ -13,7 +13,6 @@ VAR
 	diStop : BOOL;
 END_VAR
 VAR CONSTANT
-	
 	IndexSize : INT := 3;
 END_VAR
 VAR
@@ -37,4 +36,5 @@ VAR
 	PackML_State : STRING[80];
 	VisionCalcDone : BOOL;
 	x : INT := 0;
+	HelpfulInt : USINT;
 END_VAR
