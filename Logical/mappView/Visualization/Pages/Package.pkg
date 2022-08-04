@@ -12,5 +12,6 @@
     <Object Type="Package">RecepturePage</Object>
     <Object Type="Package">UsersPage</Object>
     <Object Type="Package">FilesPage</Object>
+    <Object Type="Package">HistoryPage</Object>
   </Objects>
 </Package>

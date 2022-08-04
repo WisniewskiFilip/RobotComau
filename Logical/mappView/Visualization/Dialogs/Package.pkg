@@ -6,5 +6,6 @@
     <Object Type="Package">LoginDialog</Object>
     <Object Type="Package">InfoDialog</Object>
     <Object Type="Package">TiaPortal</Object>
+    <Object Type="Package">SwapDialog</Object>
   </Objects>
 </Package>

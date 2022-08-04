@@ -90,6 +90,7 @@
         <Variable Name="Step_State" />
         <Variable Name="PackML_State" />
         <Variable Name="gIsPosGood" EnableArrayElements="True" />
+        <Variable Name="gSwapFlag" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0">

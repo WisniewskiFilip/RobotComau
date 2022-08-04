@@ -336,6 +336,10 @@ ACTION Execute:
 						P2up.Pos.Z:=gSwapPoses[0].Pos.Z+50;
 						//////////////////////// command execute
 						MpRoboArm6Axis_0.MoveProgram:=1;
+						IF MpRoboArm6Axis_0.MoveDone THEN
+							MpRoboArm6Axis_0.MoveProgram:=0;
+							Step:=ROBOTCTRL_CALCULATE;
+						END_IF 	
 					END_IF 
 				END_IF 
 		END_CASE;

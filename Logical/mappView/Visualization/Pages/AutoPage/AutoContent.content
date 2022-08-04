@@ -30,6 +30,6 @@
     <Widget xsi:type="widgets.brease.Label" id="Label5" top="160" left="120" width="200" height="40" zIndex="26" text="SAFETY READY" borderStyle="inset" fontSize="18px" bold="true" />
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle27" top="160" left="60" width="40" height="40" zIndex="27" borderStyle="inset" backColor="rgba(255, 128, 0, 1)" visible="false" />
     <Widget xsi:type="widgets.brease.ToggleSwitch" id="auto3" top="20" left="60" width="200" height="100" zIndex="28" text="AUTO" borderStyle="inset" backColor="rgba(192, 192, 192, 1)" mouseDownBackColor="rgba(255, 140, 0, 1)" fontSize="20px" />
-    <Widget xsi:type="widgets.brease.Button" id="SWAP" top="20" left="700" width="200" height="100" zIndex="29" text="SWAP" wordWrap="true" />
+    <Widget xsi:type="widgets.brease.Button" id="SWAP" top="18" left="698" width="200" height="100" zIndex="29" text="SWAP" wordWrap="true" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" margin="2px" />
   </Widgets>
 </Content>

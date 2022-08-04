@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="SwapDialog" height="300" width="580" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.ButtonBar" id="ButtonBar1" top="80" left="0" width="580" height="180" zIndex="0">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton1" top="20" left="20" width="60" height="60" zIndex="0" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="100" left="20" width="60" height="60" zIndex="1" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton3" top="20" left="100" width="60" height="60" zIndex="2" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton4" top="100" left="100" width="60" height="60" zIndex="3" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton5" top="20" left="180" width="60" height="60" zIndex="4" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton6" top="100" left="180" width="60" height="60" zIndex="5" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton7" top="20" left="260" width="60" height="60" zIndex="6" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton8" top="100" left="260" width="60" height="60" zIndex="7" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton9" top="20" left="340" width="60" height="60" zIndex="8" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton10" top="100" left="340" width="60" height="60" zIndex="9" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton11" top="20" left="420" width="60" height="60" zIndex="10" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton12" top="100" left="420" width="60" height="60" zIndex="11" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton13" top="20" left="500" width="60" height="60" zIndex="12" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton14" top="100" left="500" width="60" height="60" zIndex="13" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="40" left="180" width="240" zIndex="1" text="SELECT TWO ITEMS TO SWAP" />
+  </Widgets>
+</Content>

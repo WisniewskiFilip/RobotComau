@@ -11,6 +11,7 @@
     <Page refId="RecepturePage" />
     <Page refId="UsersPage" />
     <Page refId="FilesPage" />
+    <Page refId="History" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -23,6 +24,7 @@
     <BindingsSet refId="FilesContent_binding" />
     <BindingsSet refId="ReceptureContent_binding" />
     <BindingsSet refId="AuditContent_binding" />
+    <BindingsSet refId="content_1_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="TopContent_eventbinding" />
@@ -36,11 +38,12 @@
     <EventBindingsSet refId="ReceptureContent_eventbinding" />
     <EventBindingsSet refId="FilesContent_eventbinding" />
     <EventBindingsSet refId="AuditContent_eventbinding" />
-	</EventBindingsSets>
+  </EventBindingsSets>
   <Dialogs>
     <Dialog refId="LoginDialog" />
     <Dialog refId="InfoDialog" />
     <Dialog refId="TiaPortalDialog" />
+    <Dialog refId="dialog_0" />
   </Dialogs>
   <Contents>
     <Content refId="LeftContent" />
@@ -57,13 +60,15 @@
     <Content refId="InfoContent" />
     <Content refId="FilesContent" />
     <Content refId="TiaPortalContent" />
+    <Content refId="SwapDialog" />
+    <Content refId="History" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
   <Configurations>
-		<Configuration key="activityCount" value="false" />
-		<Configuration key="zoom" value="true" />
+    <Configuration key="activityCount" value="false" />
+    <Configuration key="zoom" value="true" />
     <Gestures>
       <!--<SystemGesture1 touchPoints="2" />
 		  <SystemGesture2 touchPoints="2" />
