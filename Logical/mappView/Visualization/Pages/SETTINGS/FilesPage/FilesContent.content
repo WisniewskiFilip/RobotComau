@@ -24,5 +24,6 @@
     <Widget xsi:type="widgets.brease.Label" id="lblSort" top="20" left="540" zIndex="13" text="Sort:" fontSize="20px" italic="false" />
     <Widget xsi:type="widgets.brease.TextOutput" id="toPath" top="540" left="740" width="260" height="60" zIndex="14" borderStyle="inset" fontSize="20px" bold="true" />
     <Widget xsi:type="widgets.brease.Label" id="lblPath" top="540" left="620" width="140" height="60" zIndex="15" text="Path:" textAlign="right" fontSize="20px" bold="true" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButton1" top="20" left="880" width="140" height="80" zIndex="16" pageId="UsersPage" text="USERS" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
   </Widgets>
 </Content>

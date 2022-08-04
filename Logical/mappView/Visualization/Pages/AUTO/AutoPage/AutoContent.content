@@ -19,17 +19,19 @@
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle7" top="540" left="60" width="40" height="40" zIndex="15" borderStyle="inset" backColor="rgba(224, 224, 224, 1)" />
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle25" top="540" left="60" width="40" height="40" zIndex="16" borderStyle="inset" backColor="rgba(255, 0, 0, 1)" visible="false" />
     <Widget xsi:type="widgets.brease.Label" id="Label7" top="540" left="120" width="180" height="40" zIndex="17" text="VISION ERROR" borderStyle="inset" fontSize="18px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton2" top="260" left="400" width="200" height="100" zIndex="18" text="START" borderStyle="inset" backColor="rgba(0, 255, 0, 1)" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton3" top="380" left="400" width="200" height="100" zIndex="19" text="STOP" borderStyle="inset" backColor="rgba(255, 0, 0, 1)" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="140" left="400" width="200" height="100" zIndex="20" text="RESET" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton2" top="260" left="460" width="200" height="100" zIndex="18" text="START" borderStyle="inset" backColor="rgba(0, 255, 0, 1)" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton3" top="380" left="460" width="200" height="100" zIndex="19" text="STOP" borderStyle="inset" backColor="rgba(255, 0, 0, 1)" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="140" left="460" width="200" height="100" zIndex="20" text="RESET" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
     <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput1" top="500" left="540" width="480" height="120" zIndex="21" value="STOPPED" fontSize="36px" bold="true" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton7" top="380" left="700" width="200" height="100" zIndex="22" text="ACK  VISION ERROR" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton8" top="260" left="700" width="200" height="100" zIndex="23" text="RESET STOP" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton9" top="20" left="400" width="200" height="100" zIndex="24" text="HOME" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton9" top="20" left="460" width="200" height="100" zIndex="24" text="HOME" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle5" top="160" left="60" width="40" height="40" zIndex="25" borderStyle="inset" backColor="rgba(224, 224, 224, 1)" />
     <Widget xsi:type="widgets.brease.Label" id="Label5" top="160" left="120" width="200" height="40" zIndex="26" text="SAFETY READY" borderStyle="inset" fontSize="18px" bold="true" />
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle27" top="160" left="60" width="40" height="40" zIndex="27" borderStyle="inset" backColor="rgba(255, 128, 0, 1)" visible="false" />
-    <Widget xsi:type="widgets.brease.ToggleSwitch" id="auto3" top="20" left="60" width="200" height="100" zIndex="28" text="AUTO" borderStyle="inset" backColor="rgba(192, 192, 192, 1)" mouseDownBackColor="rgba(255, 140, 0, 1)" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.ToggleSwitch" id="auto3" top="20" left="200" width="180" height="80" zIndex="28" text="AUTO" borderStyle="inset" backColor="rgba(192, 192, 192, 1)" mouseDownBackColor="rgba(255, 140, 0, 1)" fontSize="20px" />
     <Widget xsi:type="widgets.brease.Button" id="SWAP" top="18" left="698" width="200" height="100" zIndex="29" text="SWAP" wordWrap="true" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" margin="2px" />
+    <Widget xsi:type="widgets.brease.Button" id="SWAP1" top="138" left="698" width="200" height="100" zIndex="30" text="CONTINOUS MOVE" wordWrap="true" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" margin="2px" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButton1" top="20" left="20" width="140" height="80" zIndex="31" pageId="MainPage" text="VISION" fontSize="20px" bold="true" />
   </Widgets>
 </Content>
