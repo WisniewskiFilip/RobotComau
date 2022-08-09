@@ -1,48 +1,57 @@
 VAR
-	A : McAxisTargetType := (JointAxis:=[0,0,-90,0,90,0],SlaveAxis:=[100]);
-	doMagnet : BOOL;
-	gActPos : ARRAY[0..13] OF INT := [2(0),1,2(0),2,0,4,6(0)];
-	gAimPos1 : ARRAY[0..13] OF INT := [5(0),1,0,2,5(0),4];
-	gAimPos : ARRAY[0..13] OF INT := [5(0),1,0,2,5(0),4];
-	gSwapPoses : ARRAY[0..2] OF McPointType;
+	A : McAxisTargetType := (JointAxis:=[0,0,-90,0,90,0],SlaveAxis:=[100]); (*Home value with tool faced torwards floor*)
+	doMagnet : BOOL; (*MAgnet contorl*)
+	gActPos : ARRAY[0..13] OF INT := [2(0),1,2(0),2,0,4,6(0)]; (*table of actual positions of elements *)
+	gAimPos1 : ARRAY[0..13] OF INT := [5(0),1,0,2,5(0),4]; (*copy of target positions that are modyfied during program *)
+	gAimPos : ARRAY[0..13] OF INT := [5(0),1,0,2,5(0),4]; (*target  positions *)
+	gSwapPoses : ARRAY[0..2] OF McPointType; (*(SWAP) table of positions that will be used to swap procedure*)
 	gElementsArray : ARRAY[0..13] OF USINT;
-	gIsPosGood : ARRAY[0..13] OF BOOL := [11(0),3(1)];
-	gRobPos : ARRAY[0..13] OF McPointType := [(Pos:=(X:=510,Y:=280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=-280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=300,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-300,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0))];
-	gSafety : gSafeType;
-	gSwapMap : ARRAY[0..13] OF BOOL;
+	gIsPosGood : ARRAY[0..13] OF BOOL := [11(0),3(1)]; (*vision system feedback that tells if there is a black pad *)
+END_VAR
+VAR CONSTANT
+	gRobPos : ARRAY[0..13] OF McPointType := [(Pos:=(X:=510,Y:=280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=-280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=300,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-300,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0))]; (*predefined robot positions*)
+END_VAR
+VAR
+	gSafety : gSafeType; (*safety*)
+	gSwapMap : ARRAY[0..13] OF BOOL; (*(SWAP) Pleaces that can be used to swap*)
+	diDemo : BOOL; (*enables demo mode*)
 	gSquareArray : ARRAY[0..13] OF BOOL; (*1 IF is square in i position*)
-	HOME : McPointType := (Pos:=(X:=435.9,Y:=0,Z:=685),Orient:=(Angle1:=0,Angle2:=90,Angle3:=0));
-	MpPackMLCore_0 : MpPackMLCore;
-	MpPackMLMode_Auto : MpPackMLMode;
-	MpPackMLMode_Manual : MpPackMLMode;
-	MpPackMLMode_SemiAuto : MpPackMLMode;
+END_VAR
+VAR CONSTANT
+	HOME : McPointType := (Pos:=(X:=435.9,Y:=0,Z:=685),Orient:=(Angle1:=0,Angle2:=90,Angle3:=0)); (*Home pose *)
+END_VAR
+VAR
+	MpPackMLCore_0 : MpPackMLCore; (*PACK ML*)
+	MpPackMLMode_Auto : MpPackMLMode; (*PACK ML AUTO*)
+	MpPackMLMode_Manual : MpPackMLMode; (*PACK ML MANUAL*)
+	MpPackMLMode_SemiAuto : MpPackMLMode; (*PACK ML SEMIAUTO*)
 	P0 : McPointType := (Pos:=(X:=435,Y:=0,Z:=405),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0));
-	P1 : McPointType := (Pos:=(X:=510,Y:=-280,Z:=70),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0));
-	P1up : McPointType := (Pos:=(X:=510,Y:=-280,Z:=120),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0));
-	P2 : McPointType := (Pos:=(X:=410,Y:=200,Z:=70),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0));
-	P2up : McPointType := (Pos:=(X:=410,Y:=200,Z:=120),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0));
-	pom : ARRAY[0..9] OF BOOL := [10(0)];
+	P1 : McPointType := (Pos:=(X:=510,Y:=-280,Z:=70),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)); (*first robot position *)
+	P1up : McPointType := (Pos:=(X:=510,Y:=-280,Z:=120),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)); (*position over first robot position*)
+	P2 : McPointType := (Pos:=(X:=410,Y:=200,Z:=70),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)); (*second robot position*)
+	P2up : McPointType := (Pos:=(X:=410,Y:=200,Z:=120),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)); (*position over second robot  position*)
 	PZ : McPointType := (Pos:=(X:=435,Y:=0,Z:=685),Orient:=(Angle1:=0,Angle2:=90,Angle3:=0));
 END_VAR
 VAR RETAIN
 	RestorePos : ARRAY[0..5] OF McAcpAxRestorePosType; (*Comau Home Position*)
 END_VAR
 VAR
-	Camera_0 : CameraStruct;
+	Camera_0 : CameraStruct; (*camera*)
 	i : USINT;
 	PixelRange_0 : PixelCounterLimits;
-	doVisError : BOOL;
-	DetectedSquares : USINT;
-	gSwapFlag : BOOL;
-	y : USINT;
+	doVisError : BOOL; (*vision error output*)
+	DetectedSquares : USINT; (*swuare detaction*)
+	gSwapFlag : BOOL; (*enables swap mode *)
+	y : USINT; (*is used to execute moves *)
 	DetectedWrench : USINT;
 	DetectedScrewWasher : USINT;
 	DetectedScrew : USINT;
-	gPosBuffor : ARRAY[0..13] OF BOOL;
-	Index : ARRAY[0..2] OF INT := [1,2,4];
-	Aim1 : ARRAY[0..13] OF BOOL;
-	Aim2 : ARRAY[0..13] OF BOOL;
-	Aim4 : ARRAY[0..13] OF BOOL;
+	gPosBuffor : ARRAY[0..13] OF BOOL; (*positions that can be used as buffor *)
+	DemoY : INT; (*(DEMO)is used to help with selecting poses at DEMO*)
+	Index : ARRAY[0..2] OF INT := [1,2,4]; (*defines order of moves *)
+	Aim1 : ARRAY[0..13] OF BOOL; (*defines aim pose of object number 1*)
+	Aim2 : ARRAY[0..13] OF BOOL; (*defines aim pose of object number 2*)
+	Aim4 : ARRAY[0..13] OF BOOL; (*defines aim pose of object number 4*)
 END_VAR
 VAR CONSTANT
 	LowSpeed : UDINT := 6000;

@@ -63,11 +63,8 @@ ACTION Starting:
 				
 				AimIsGood:=TRUE;
 				FOR x:=0  TO SizeOfArray DO
-					pom[0]:=1;
 					IF gAimPos[x]>0 THEN
-						pom[1]:=1;
 						IF (gIsPosGood[x]=FALSE) THEN 
-							pom[2]:=1;
 							Step:=ROBOTCTRL_ERROR_WRONG_AIM; 
 							Step_State := 'ERROR_WRONG_AIM';
 							AimIsGood:=0; 

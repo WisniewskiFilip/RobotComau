@@ -24,6 +24,11 @@ ACTION Execute:
 		
 		CASE Step OF
 			ROBOTCTRL_CALCULATE:	
+				//Reseting buffor and creating DemoPos
+				FOR x:=0 TO SizeOfArray DO
+					gPosBuffor[x]:=FALSE;
+					
+				END_FOR;
 				//blocks which can be used as buffor
 				FOR x:=0 TO SizeOfArray DO 
 					IF  gActPos[x]=0 AND gIsPosGood[x]=TRUE THEN
@@ -31,7 +36,85 @@ ACTION Execute:
 					END_IF;
 				END_FOR;
 				
-				IF gSwapFlag THEN
+				IF diDemo THEN
+					CASE Demo OF  
+						
+						0:
+							DemoY:=0;
+							DemoIndex[0]:=1;
+							DemoIndex[1]:=2;
+							DemoIndex[2]:=4;
+							FOR x:=0 TO SizeOfArray DO 
+								IF  gActPos[x]=0 AND gIsPosGood[x] AND DemoY <IndexSize THEN
+									DemoAimPos[x]:=DemoIndex[DemoY];
+									DemoY:=DemoY+1;
+								ELSE
+									DemoAimPos[x]:=0;
+								END_IF;
+							END_FOR;	
+								
+							Step:=ROBOTCTRL_CALCULATE_P1;
+							Demo:=1;
+							
+								
+						1:
+							DemoY:=0;
+							DemoIndex[0]:=2;
+							DemoIndex[1]:=1;
+							DemoIndex[2]:=4;
+							FOR x:=0 TO SizeOfArray DO 
+								IF  gActPos[x]=0 AND gIsPosGood[x] AND DemoY <IndexSize THEN
+									DemoAimPos[x]:=DemoIndex[DemoY];
+									DemoY:=DemoY+1;
+								ELSE
+									DemoAimPos[x]:=0;
+								END_IF;
+							END_FOR;	
+								
+							Step:=ROBOTCTRL_CALCULATE_P1;
+							Demo:=2;
+							
+						2:
+							DemoY:=0;
+							DemoIndex[0]:=4;
+							DemoIndex[1]:=2;
+							DemoIndex[2]:=1;
+							FOR x:=0 TO SizeOfArray DO 
+								IF  gActPos[x]=0 AND gIsPosGood[x] AND DemoY <IndexSize THEN
+									DemoAimPos[x]:=DemoIndex[DemoY];
+									DemoY:=DemoY+1;
+								ELSE
+									DemoAimPos[x]:=0;
+								END_IF;
+							END_FOR;	
+								
+							Step:=ROBOTCTRL_CALCULATE_P1;
+							Demo:=3;
+										
+						3:
+							DemoY:=0;
+							DemoIndex[0]:=1;
+							DemoIndex[1]:=4;
+							DemoIndex[2]:=2;
+							FOR x:=0 TO SizeOfArray DO 
+								IF  gActPos[x]=0 AND gIsPosGood[x] AND DemoY <IndexSize THEN
+									DemoAimPos[x]:=DemoIndex[DemoY];
+									DemoY:=DemoY+1;
+								ELSE
+									DemoAimPos[x]:=0;
+								END_IF;
+							END_FOR;	
+								
+							Step:=ROBOTCTRL_CALCULATE_P1;
+							Demo:=0;
+										
+					END_CASE;
+					
+					
+					
+					
+				ELSIF	gSwapFlag THEN
+					gSwapFlag:=FALSE;
 					Step:=ROBOTCTRL_SWAP;
 				ELSIF P1P2_Ok THEN
 					Step:=ROBOTCTRL_IS_MOVE_NEEDED;
@@ -50,7 +133,26 @@ ACTION Execute:
 				
 				
 			ROBOTCTRL_CALCULATE_P1:	
-				//assigning values to P1 and P1up
+							//assigning values to P1 and P1up
+							
+			IF diDemo THEN
+				FOR x:=0  TO SizeOfArray DO
+					IF gActPos[x]=DemoIndex[y] THEN
+						P1.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+						P1.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+						P1.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+						P1.Pos.X:=gRobPos[x].Pos.X;
+						P1.Pos.Y:=gRobPos[x].Pos.Y;
+						P1.Pos.Z:=gRobPos[x].Pos.Z;
+						P1up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+						P1up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+						P1up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+						P1up.Pos.X:=gRobPos[x].Pos.X;
+						P1up.Pos.Y:=gRobPos[x].Pos.Y;
+						P1up.Pos.Z:=gRobPos[x].Pos.Z+50;
+					END_IF;	
+				END_FOR;				
+			ELSE	
 				FOR x:=0  TO SizeOfArray DO
 					IF gActPos[x]=Index[y] THEN
 						P1.Orient.Angle1:=gRobPos[x].Orient.Angle1;
@@ -67,13 +169,16 @@ ACTION Execute:
 						P1up.Pos.Z:=gRobPos[x].Pos.Z+50;
 					END_IF;	
 				END_FOR;
+			END_IF;					
+							
 				Step:=ROBOTCTRL_CALCULATE_P2;
 				Step_State := 'CALCULATE_P2';
 				
 			ROBOTCTRL_CALCULATE_P2:	
+				IF diDemo THEN			
 				FOR x:=0 TO SizeOfArray DO
 					//copig values 
-					gAimPos1[x]:=gAimPos[x];
+					gAimPos1[x]:=DemoAimPos[x];
 				END_FOR;
 				FOR x:=0 TO SizeOfArray DO
 					//reseting maps 
@@ -85,7 +190,7 @@ ACTION Execute:
 				//by substracting corresponding value of element 
 				//AND checing IF its greater OR equal TO zero
 				FOR z:=0 TO IndexSize DO
-					IF Index[z]=4 THEN
+					IF DemoIndex[z]=4 THEN
 						FOR x:=0 TO SizeOfArray DO
 							IF((gAimPos1[x]-4)>=0) THEN
 								gAimPos1[x]:=gAimPos1[x]-4;
@@ -96,7 +201,7 @@ ACTION Execute:
 				END_FOR;
 				
 				FOR z:=0 TO IndexSize DO
-					IF Index[z]=2 THEN
+					IF DemoIndex[z]=2 THEN
 						FOR x:=0 TO SizeOfArray DO
 							IF((gAimPos1[x]-2)>=0) THEN
 								gAimPos1[x]:=gAimPos1[x]-2;
@@ -107,7 +212,7 @@ ACTION Execute:
 				END_FOR;	
 				
 				FOR z:=0 TO IndexSize DO
-					IF Index[z]=1 THEN
+					IF DemoIndex[z]=1 THEN
 						FOR x:=0 TO SizeOfArray DO
 							IF((gAimPos1[x]-1)>=0) THEN
 								gAimPos1[x]:=gAimPos1[x]-1;
@@ -118,8 +223,12 @@ ACTION Execute:
 					END_FOR;
 				
 				
-					//assigning values to P2 and P2up
-				IF Index[y]=4 THEN
+					
+				IF DemoIndex[y]=4 THEN
+					FOR x:=0  TO SizeOfArray DO	
+							gActPos[x]:=0;			
+					END_FOR		
+									
 					//moving in order defined in Index
 						FOR x:=0  TO SizeOfArray DO
 							IF Aim4[x]=TRUE THEN
@@ -135,9 +244,10 @@ ACTION Execute:
 								P2up.Pos.X:=gRobPos[x].Pos.X;
 								P2up.Pos.Y:=gRobPos[x].Pos.Y;
 								P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+								gActPos[x]:=4;
 								END_IF;
 							END_FOR;
-						ELSIF Index[y]=2 THEN
+					ELSIF DemoIndex[y]=2 THEN
 						FOR x:=0  TO SizeOfArray DO
 							IF Aim2[x]=TRUE THEN	
 								P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
@@ -152,9 +262,10 @@ ACTION Execute:
 								P2up.Pos.X:=gRobPos[x].Pos.X;
 								P2up.Pos.Y:=gRobPos[x].Pos.Y;
 								P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+								gActPos[x]:=2;		
 							END_IF;
-						END_FOR;			
-					ELSIF Index[y]=1 THEN
+							END_FOR;			
+					ELSIF DemoIndex[y]=1 THEN
 						FOR x:=0  TO SizeOfArray DO
 							IF Aim1[x]=TRUE THEN	
 								P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
@@ -169,9 +280,114 @@ ACTION Execute:
 								P2up.Pos.X:=gRobPos[x].Pos.X;
 								P2up.Pos.Y:=gRobPos[x].Pos.Y;
 								P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+								gActPos[x]:=1;
 							END_IF;
 						END_FOR;			
-					END_IF;				
+					END_IF;	
+				ELSE
+							FOR x:=0 TO SizeOfArray DO
+								//copig values 
+								gAimPos1[x]:=gAimPos[x];
+							END_FOR;
+							FOR x:=0 TO SizeOfArray DO
+								//reseting maps 
+								Aim1[x]:=FALSE;
+								Aim2[x]:=FALSE;
+								Aim4[x]:=FALSE;
+							END_FOR;
+							//Creating maps conteining positions of each element 
+							//by substracting corresponding value of element 
+							//AND checing IF its greater OR equal TO zero
+							FOR z:=0 TO IndexSize DO
+								IF Index[z]=4 THEN
+									FOR x:=0 TO SizeOfArray DO
+										IF((gAimPos1[x]-4)>=0) THEN
+											gAimPos1[x]:=gAimPos1[x]-4;
+											Aim4[x]:=TRUE;
+										END_IF;
+									END_FOR;
+								END_IF;	
+							END_FOR;
+				
+							FOR z:=0 TO IndexSize DO
+								IF Index[z]=2 THEN
+									FOR x:=0 TO SizeOfArray DO
+										IF((gAimPos1[x]-2)>=0) THEN
+											gAimPos1[x]:=gAimPos1[x]-2;
+											Aim2[x]:=TRUE;
+										END_IF;
+									END_FOR;
+								END_IF;	
+							END_FOR;	
+				
+							FOR z:=0 TO IndexSize DO
+								IF Index[z]=1 THEN
+									FOR x:=0 TO SizeOfArray DO
+										IF((gAimPos1[x]-1)>=0) THEN
+											gAimPos1[x]:=gAimPos1[x]-1;
+											Aim1[x]:=TRUE;
+										END_IF;
+									END_FOR;
+								END_IF;		
+							END_FOR;
+				
+				
+							//assigning values to P2 and P2up
+							IF Index[y]=4 THEN
+								//moving in order defined in Index
+								FOR x:=0  TO SizeOfArray DO
+									IF Aim4[x]=TRUE THEN
+										P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+										P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+										P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+										P2.Pos.X:=gRobPos[x].Pos.X;
+										P2.Pos.Y:=gRobPos[x].Pos.Y;
+										P2.Pos.Z:=gRobPos[x].Pos.Z;
+										P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+										P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+										P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+										P2up.Pos.X:=gRobPos[x].Pos.X;
+										P2up.Pos.Y:=gRobPos[x].Pos.Y;
+										P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+									END_IF;
+								END_FOR;
+							ELSIF Index[y]=2 THEN
+								FOR x:=0  TO SizeOfArray DO
+									IF Aim2[x]=TRUE THEN	
+										P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+										P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+										P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+										P2.Pos.X:=gRobPos[x].Pos.X;
+										P2.Pos.Y:=gRobPos[x].Pos.Y;
+										P2.Pos.Z:=gRobPos[x].Pos.Z;
+										P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+										P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+										P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+										P2up.Pos.X:=gRobPos[x].Pos.X;
+										P2up.Pos.Y:=gRobPos[x].Pos.Y;
+										P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+									END_IF;
+								END_FOR;			
+							ELSIF Index[y]=1 THEN
+								FOR x:=0  TO SizeOfArray DO
+									IF Aim1[x]=TRUE THEN	
+										P2.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+										P2.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+										P2.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+										P2.Pos.X:=gRobPos[x].Pos.X;
+										P2.Pos.Y:=gRobPos[x].Pos.Y;
+										P2.Pos.Z:=gRobPos[x].Pos.Z;
+										P2up.Orient.Angle1:=gRobPos[x].Orient.Angle1;
+										P2up.Orient.Angle2:=gRobPos[x].Orient.Angle2;
+										P2up.Orient.Angle3:=gRobPos[x].Orient.Angle3;
+										P2up.Pos.X:=gRobPos[x].Pos.X;
+										P2up.Pos.Y:=gRobPos[x].Pos.Y;
+										P2up.Pos.Z:=gRobPos[x].Pos.Z+50;
+									END_IF;
+								END_FOR;			
+							END_IF;	
+						END_IF;	
+					
 					P1P2_Ok:=1; // this flag means that new P1 and new P2 have been assigned  
 					Step:=ROBOTCTRL_CALCULATE;
 
@@ -202,6 +418,9 @@ ACTION Execute:
 					//restarting assigning procedure with new object after finishing move 
 					MpRoboArm6Axis_0.MoveProgram:=0;
 					y:=y+1;
+					IF diDemo AND y=3 THEN
+					y:=0;
+					END_IF
 					P1P2_Ok:=0;
 					Step:=ROBOTCTRL_CALCULATE;
 					Step_State := 'CALCULATE';
@@ -339,11 +558,12 @@ ACTION Execute:
 						IF MpRoboArm6Axis_0.MoveDone THEN
 							MpRoboArm6Axis_0.MoveProgram:=0;
 							Step:=ROBOTCTRL_CALCULATE;
-						END_IF 	
-					END_IF 
-				END_IF 
+						END_IF; 	
+					END_IF;		
+				END_IF; 
+			
 		END_CASE;
 		
-	END_IF
+	END_IF;
 
 END_ACTION
