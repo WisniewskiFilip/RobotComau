@@ -431,6 +431,7 @@ ACTION Execute:
 				gSwapFlag:=FALSE;
 				HelpfulInt:=0;
 				FOR x:=0 TO SizeOfArray DO 
+					//swap map can have only 2 values that are TRUE those coordinates are going to be swaped 
 					IF gSwapMap[x] THEN
 						gSwapPoses[HelpfulInt].Orient.Angle1:=gRobPos[x].Orient.Angle1;
 						gSwapPoses[HelpfulInt].Orient.Angle2:=gRobPos[x].Orient.Angle2;
@@ -460,73 +461,87 @@ ACTION Execute:
 				FOR x:=0 TO SizeOfArray DO 
 					gSwapMap[x]:=FALSE;
 				END_FOR;
+				y:=0;
 				Step:=ROBOTCTRL_SWAP_MOVE;
 				
 				
 			ROBOTCTRL_SWAP_MOVE:
-				//first move 
-				///////////////////////P1
-				P1.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
-				P1.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
-				P1.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
-				P1.Pos.X:=gSwapPoses[0].Pos.X;
-				P1.Pos.Y:=gSwapPoses[0].Pos.Y;
-				P1.Pos.Z:=gSwapPoses[0].Pos.Z;
-				P1up.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
-				P1up.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
-				P1up.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
-				P1up.Pos.X:=gSwapPoses[0].Pos.X;
-				P1up.Pos.Y:=gSwapPoses[0].Pos.Y;
-				P1up.Pos.Z:=gSwapPoses[0].Pos.Z+50;
-				///////////////////////P2
-				P2.Orient.Angle1:=gSwapPoses[2].Orient.Angle1;
-				P2.Orient.Angle2:=gSwapPoses[2].Orient.Angle2;
-				P2.Orient.Angle3:=gSwapPoses[2].Orient.Angle3;
-				P2.Pos.X:=gSwapPoses[2].Pos.X;
-				P2.Pos.Y:=gSwapPoses[2].Pos.Y;
-				P2.Pos.Z:=gSwapPoses[2].Pos.Z;
-				P2up.Orient.Angle1:=gSwapPoses[2].Orient.Angle1;
-				P2up.Orient.Angle2:=gSwapPoses[2].Orient.Angle2;
-				P2up.Orient.Angle3:=gSwapPoses[2].Orient.Angle3;
-				P2up.Pos.X:=gSwapPoses[2].Pos.X;
-				P2up.Pos.Y:=gSwapPoses[2].Pos.Y;
-				P2up.Pos.Z:=gSwapPoses[2].Pos.Z+50;
-				//////////////////////// command execute
-				MpRoboArm6Axis_0.MoveProgram:=1;
-				IF MpRoboArm6Axis_0.MoveDone THEN
-					//second move 
-					MpRoboArm6Axis_0.MoveProgram:=0;
-					///////////////////////P1
-					P1.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
-					P1.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
-					P1.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
-					P1.Pos.X:=gSwapPoses[0].Pos.X;
-					P1.Pos.Y:=gSwapPoses[0].Pos.Y;
-					P1.Pos.Z:=gSwapPoses[0].Pos.Z;
-					P1up.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
-					P1up.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
-					P1up.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
-					P1up.Pos.X:=gSwapPoses[0].Pos.X;
-					P1up.Pos.Y:=gSwapPoses[0].Pos.Y;
-					P1up.Pos.Z:=gSwapPoses[0].Pos.Z+50;
-					///////////////////////P2
-					P2.Orient.Angle1:=gSwapPoses[1].Orient.Angle1;
-					P2.Orient.Angle2:=gSwapPoses[1].Orient.Angle2;
-					P2.Orient.Angle3:=gSwapPoses[1].Orient.Angle3;
-					P2.Pos.X:=gSwapPoses[1].Pos.X;
-					P2.Pos.Y:=gSwapPoses[1].Pos.Y;
-					P2.Pos.Z:=gSwapPoses[1].Pos.Z;
-					P2up.Orient.Angle1:=gSwapPoses[1].Orient.Angle1;
-					P2up.Orient.Angle2:=gSwapPoses[1].Orient.Angle2;
-					P2up.Orient.Angle3:=gSwapPoses[1].Orient.Angle3;
-					P2up.Pos.X:=gSwapPoses[1].Pos.X;
-					P2up.Pos.Y:=gSwapPoses[1].Pos.Y;
-					P2up.Pos.Z:=gSwapPoses[1].Pos.Z+50;
-					//////////////////////// command execute
-					MpRoboArm6Axis_0.MoveProgram:=1;
-					IF MpRoboArm6Axis_0.MoveDone THEN
+				
+				CASE SwapStep OF 
+					0:
+						//First move 
+						///////////////////////P1
+						P1.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
+						P1.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
+						P1.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
+						P1.Pos.X:=gSwapPoses[0].Pos.X;
+						P1.Pos.Y:=gSwapPoses[0].Pos.Y;
+						P1.Pos.Z:=gSwapPoses[0].Pos.Z;
+						P1up.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
+						P1up.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
+						P1up.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
+						P1up.Pos.X:=gSwapPoses[0].Pos.X;
+						P1up.Pos.Y:=gSwapPoses[0].Pos.Y;
+						P1up.Pos.Z:=gSwapPoses[0].Pos.Z+50;
+						///////////////////////P2
+						P2.Orient.Angle1:=gSwapPoses[2].Orient.Angle1;
+						P2.Orient.Angle2:=gSwapPoses[2].Orient.Angle2;
+						P2.Orient.Angle3:=gSwapPoses[2].Orient.Angle3;
+						P2.Pos.X:=gSwapPoses[2].Pos.X;
+						P2.Pos.Y:=gSwapPoses[2].Pos.Y;
+						P2.Pos.Z:=gSwapPoses[2].Pos.Z;
+						P2up.Orient.Angle1:=gSwapPoses[2].Orient.Angle1;
+						P2up.Orient.Angle2:=gSwapPoses[2].Orient.Angle2;
+						P2up.Orient.Angle3:=gSwapPoses[2].Orient.Angle3;
+						P2up.Pos.X:=gSwapPoses[2].Pos.X;
+						P2up.Pos.Y:=gSwapPoses[2].Pos.Y;
+						P2up.Pos.Z:=gSwapPoses[2].Pos.Z+50;
+						RoboParameters.ProgramName := 'Robotic.st';  
+						//////////////////////// command execute
+						MpRoboArm6Axis_0.MoveProgram:=1;
+						IF MpRoboArm6Axis_0.MoveDone  THEN
+							MpRoboArm6Axis_0.MoveProgram:=0;
+							SwapStep:=1;
+						END_IF;
+					1:
+						//second move 
+						///////////////////////P1
+						P1.Orient.Angle1:=gSwapPoses[1].Orient.Angle1;
+						P1.Orient.Angle2:=gSwapPoses[1].Orient.Angle2;
+						P1.Orient.Angle3:=gSwapPoses[1].Orient.Angle3;
+						P1.Pos.X:=gSwapPoses[1].Pos.X;
+						P1.Pos.Y:=gSwapPoses[1].Pos.Y;
+						P1.Pos.Z:=gSwapPoses[1].Pos.Z;
+						P1up.Orient.Angle1:=gSwapPoses[1].Orient.Angle1;
+						P1up.Orient.Angle2:=gSwapPoses[1].Orient.Angle2;
+						P1up.Orient.Angle3:=gSwapPoses[1].Orient.Angle3;
+						P1up.Pos.X:=gSwapPoses[1].Pos.X;
+						P1up.Pos.Y:=gSwapPoses[1].Pos.Y;
+						P1up.Pos.Z:=gSwapPoses[1].Pos.Z+50;
+						///////////////////////P2
+						P2.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
+						P2.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
+						P2.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
+						P2.Pos.X:=gSwapPoses[0].Pos.X;
+						P2.Pos.Y:=gSwapPoses[0].Pos.Y;
+						P2.Pos.Z:=gSwapPoses[0].Pos.Z;
+						P2up.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
+						P2up.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
+						P2up.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
+						P2up.Pos.X:=gSwapPoses[0].Pos.X;
+						P2up.Pos.Y:=gSwapPoses[0].Pos.Y;
+						P2up.Pos.Z:=gSwapPoses[0].Pos.Z+50;
+						y:=1;
+						RoboParameters.ProgramName := 'Robotic.st';  
+						//////////////////////// command execute
+						MpRoboArm6Axis_0.MoveProgram:=1;
+						IF MpRoboArm6Axis_0.MoveDone   THEN
+							MpRoboArm6Axis_0.MoveProgram:=0;
+							SwapStep:=2;
+						END_IF;
+						
+					2:
 						//third move
-						MpRoboArm6Axis_0.MoveProgram:=0;
 						///////////////////////P1
 						P1.Orient.Angle1:=gSwapPoses[2].Orient.Angle1;
 						P1.Orient.Angle2:=gSwapPoses[2].Orient.Angle2;
@@ -541,27 +556,31 @@ ACTION Execute:
 						P1up.Pos.Y:=gSwapPoses[2].Pos.Y;
 						P1up.Pos.Z:=gSwapPoses[2].Pos.Z+50;
 						///////////////////////P2
-						P2.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
-						P2.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
-						P2.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
-						P2.Pos.X:=gSwapPoses[0].Pos.X;
-						P2.Pos.Y:=gSwapPoses[0].Pos.Y;
-						P2.Pos.Z:=gSwapPoses[0].Pos.Z;
-						P2up.Orient.Angle1:=gSwapPoses[0].Orient.Angle1;
-						P2up.Orient.Angle2:=gSwapPoses[0].Orient.Angle2;
-						P2up.Orient.Angle3:=gSwapPoses[0].Orient.Angle3;
-						P2up.Pos.X:=gSwapPoses[0].Pos.X;
-						P2up.Pos.Y:=gSwapPoses[0].Pos.Y;
-						P2up.Pos.Z:=gSwapPoses[0].Pos.Z+50;
-						//////////////////////// command execute
+						P2.Orient.Angle1:=gSwapPoses[1].Orient.Angle1;
+						P2.Orient.Angle2:=gSwapPoses[1].Orient.Angle2;
+						P2.Orient.Angle3:=gSwapPoses[1].Orient.Angle3;
+						P2.Pos.X:=gSwapPoses[1].Pos.X;
+						P2.Pos.Y:=gSwapPoses[1].Pos.Y;
+						P2.Pos.Z:=gSwapPoses[1].Pos.Z;
+						P2up.Orient.Angle1:=gSwapPoses[1].Orient.Angle1;
+						P2up.Orient.Angle2:=gSwapPoses[1].Orient.Angle2;
+						P2up.Orient.Angle3:=gSwapPoses[1].Orient.Angle3;
+						P2up.Pos.X:=gSwapPoses[1].Pos.X;
+						P2up.Pos.Y:=gSwapPoses[1].Pos.Y;
+						P2up.Pos.Z:=gSwapPoses[1].Pos.Z+50;
+						y:=2;
+						RoboParameters.ProgramName := 'Robotic.st';  
 						MpRoboArm6Axis_0.MoveProgram:=1;
-						IF MpRoboArm6Axis_0.MoveDone THEN
+						IF MpRoboArm6Axis_0.MoveDone   THEN
 							MpRoboArm6Axis_0.MoveProgram:=0;
-							Step:=ROBOTCTRL_CALCULATE;
-						END_IF; 	
-					END_IF;		
-				END_IF; 
-			
+							SwapStep:=3;
+						END_IF;
+						
+					3: 
+						Step:=ROBOTCTRL_CALCULATE;
+					
+				END_CASE ;
+				
 		END_CASE;
 		
 	END_IF;

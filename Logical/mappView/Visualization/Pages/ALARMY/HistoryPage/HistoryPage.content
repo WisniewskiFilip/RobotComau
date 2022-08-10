@@ -3,9 +3,9 @@
   <Widgets>
     <Widget xsi:type="widgets.brease.AlarmHistory" id="AlarmHistory1" top="119" left="20" width="1000" height="521" zIndex="0">
       <Widgets>
-        <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryTime" zIndex="0" columnType="timestamp" text="Czas" />
-        <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryInfo" width="280" zIndex="1" text="Informacja" />
-        <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistorCode" width="80" zIndex="2" columnType="code" text="Kod" />
+        <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryTime" width="340" zIndex="0" columnType="timestamp" text="Czas" />
+        <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryInfo" width="520" zIndex="1" text="Informacja" />
+        <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistorCode" width="140" zIndex="2" columnType="code" text="Kod" />
       </Widgets>
     </Widget>
     <Widget xsi:type="widgets.brease.Label" id="Label1" top="20" left="280" width="440" height="80" zIndex="1" text="HISTORIA ALARMÓW" textAlign="center" fontSize="26px" bold="true" />

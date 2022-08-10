@@ -3,8 +3,8 @@
   <Widgets>
     <Widget xsi:type="widgets.brease.AlarmList" id="AlarmList1" top="119" left="20" width="1000" height="522" zIndex="0" tabIndex="0">
       <Widgets>
-        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListTime" zIndex="0" columnType="timestamp" text="Czas" />
-        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListInfo" width="280" zIndex="1" text="Informacja" />
+        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListTime" width="300" zIndex="0" columnType="timestamp" text="Czas" />
+        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListInfo" width="500" zIndex="1" text="Informacja" />
         <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListCode" width="80" zIndex="2" columnType="code" text="Kod" />
         <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListState" width="120" zIndex="3" columnType="state" text="Stan" />
       </Widgets>

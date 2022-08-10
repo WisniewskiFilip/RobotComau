@@ -3,6 +3,9 @@ VAR
 	cartezianVSjog : BOOL; (*Wybór miedzy sterowaniem we wspólrzednych wewnetrznych - 0 / zewnêtrznych - 1 *)
 	cmdContinue : BOOL;
 	cmdInterrupt : BOOL;
+	Demo : INT;
+	DemoAimPos : ARRAY[0..13] OF INT; (*(DEMO) Aim poses used in demo *)
+	DemoIndex : ARRAY[0..2] OF INT := [1,2,4]; (*(DEMO) Order Of movess*)
 	diAck : BOOL; (*(IN AUTO)Resets of Vision system error*)
 	diAuto : BOOL; (*Enables Auto mode*)
 	diExecute : BOOL; (*(IN AUTO) Starts moving proedure *)
@@ -11,6 +14,7 @@ VAR
 	diSemiAuto : BOOL; (*Enables semiAuto mode*)
 	diStart : BOOL; (*(IN AUTO) Sets robot ready *)
 	diStop : BOOL; (*(IN AUTO) stops the procedure *)
+	HelpfulInt : USINT; (*(SWAP) int that helps with assigning values *)
 END_VAR
 VAR CONSTANT
 	IndexSize : INT := 3; (*Amount of diffrent objects *)
@@ -18,16 +22,15 @@ END_VAR
 VAR
 	MpRoboArm6Axis_0 : MpRoboArm6Axis; (*Robot *)
 	P1P2_Ok : BOOL := FALSE; (*flag that shows if P1 and P2 was assigned*)
+	PackML_State : STRING[80];
 	RoboParameters : MpRoboArm6AxisParType; (*Robot Parameters*)
 END_VAR
 VAR CONSTANT
 	SizeOfArray : INT := 13; (*(x+1)  amount of possible pleaces to move objects *)
 END_VAR
 VAR
-	DemoIndex : ARRAY[0..2] OF INT := [1,2,4]; (*(DEMO) Order Of movess*)
-	DemoAimPos : ARRAY[0..13] OF INT; (*(DEMO) Aim poses used in demo *)
-	Demo : INT;
 	Step : {REDUND_UNREPLICABLE} Step_typ := (0); (*state robot *)
+	Step_State : STRING[80];
 	VelocityQ : REAL;
 	VelocityQ1 : REAL; (*Przypisanie predkosci do parametru 1 w zale¿nosci od wyboru wspólrzednych*)
 	VelocityQ2 : REAL; (*Przypisanie predkosci do parametru 2 w zale¿nosci od wyboru wspólrzednych*)
@@ -35,9 +38,7 @@ VAR
 	VelocityQ4 : REAL; (*Przypisanie predkosci do parametru 4 w zale¿nosci od wyboru wspólrzednych*)
 	VelocityQ5 : REAL; (*Przypisanie predkosci do parametru 5 w zale¿nosci od wyboru wspólrzednych*)
 	VelocityQ6 : REAL; (*Przypisanie predkosci do parametru 6 w zale¿nosci od wyboru wspólrzednych*)
-	Step_State : STRING[80];
-	PackML_State : STRING[80];
 	VisionCalcDone : BOOL;
+	SwapStep : USINT := 0; (*(SWAP) used in swap procedure *)
 	x : INT := 0;
-	HelpfulInt : USINT; (*(SWAP) int that helps with assigning values *)
 END_VAR

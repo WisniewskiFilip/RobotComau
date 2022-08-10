@@ -1,0 +1,15 @@
+VAR
+	iFile : INT;
+	MpFileManagerUI_0 : MpFileManagerUI;
+	MpFileMngSetup : MpFileManagerUISetupType;
+	MpFileMngConnect : MpFileManagerUIConnectType;
+	tabInfo : TabInfo;
+	messageType : STRING[80];
+	tempString : STRING[200];
+	tableConfig : STRING[200];
+	testString : STRING[200] := '{"specRows": [ {"from":0, "to":3, "visible":true}, {"from":4, "to":49, "visible":false}]}';
+	tableShowLimit : INT;
+	sortOrder : ARRAY[0..5] OF STRING[80];
+	chosenSortOrder : INT;
+	itemType : ARRAY[0..49] OF STRING[80];
+END_VAR

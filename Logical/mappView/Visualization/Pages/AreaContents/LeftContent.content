@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="LeftContent" height="650" width="250" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.NavigationBar" id="NavigationBar1" top="20" left="40" width="200" height="675" zIndex="0">
+    <Widget xsi:type="widgets.brease.NavigationBar" id="NavigationBar1" top="0" left="40" width="200" height="675" zIndex="0">
       <Widgets>
         <Widget xsi:type="widgets.brease.NavigationButton" id="btnAlarmy" top="5" left="0" width="180" height="80" zIndex="0" image="Media/SymbolLib/Alarm/Alarm.svg" imageAlign="top" pageId="AlarmPage" text="ALARMY" imageColor="rgba(255, 140, 0, 1)" borderStyle="inset" backColor="rgba(255, 255, 255, 1)" textColor="rgba(0, 0, 0, 1)" fontSize="18px" bold="true" checkedBackColor="rgba(255, 140, 0, 1)" permissionOperate="['Administrators', 'Everyone', 'Operator']" />
         <Widget xsi:type="widgets.brease.NavigationButton" id="btnAuto" top="95" left="0" width="180" height="80" zIndex="1" image="Media/SymbolLib/Symbols/On.svg" imageAlign="top" pageId="AutoPage" text="AUTO" imageColor="rgba(255, 140, 0, 1)" borderStyle="inset" backColor="rgba(255, 255, 255, 1)" textColor="rgba(0, 0, 0, 1)" fontSize="18px" bold="true" checkedBackColor="rgba(255, 140, 0, 1)" permissionOperate="['Administrators', 'Operator']" />

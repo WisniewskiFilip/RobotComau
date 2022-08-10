@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="AlarmContent" height="650" width="1030" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.AlarmList" id="AlarmList1" top="119" left="20" width="1000" height="522" zIndex="0" tabIndex="0">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListTime" zIndex="0" columnType="timestamp" text="Czas" />
+        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListInfo" width="280" zIndex="1" text="Informacja" />
+        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListCode" width="80" zIndex="2" columnType="code" text="Kod" />
+        <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListState" width="120" zIndex="3" columnType="state" text="Stan" />
+      </Widgets>
+    </Widget>
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnAcknowledge" top="20" left="800" width="200" height="80" zIndex="1" text="Zatwierdź" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" permissionOperate="['Administrators']" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnAcknowledgeAll" top="20" left="560" width="200" height="80" zIndex="2" text="Zatwierdź wszystko" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" permissionOperate="['Administrators']" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="20" left="320" width="220" height="80" zIndex="3" text="ALARMY" textAlign="center" fontSize="26px" bold="true" />
+    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButton1" top="20" left="20" width="200" height="80" zIndex="4" pageId="History" text="HISTORY" fontSize="20px" bold="true" />
+  </Widgets>
+</Content>
