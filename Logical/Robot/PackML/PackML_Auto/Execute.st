@@ -577,7 +577,8 @@ ACTION Execute:
 						END_IF;
 						
 					3: 
-						Step:=ROBOTCTRL_CALCULATE;
+						SwapStep:=0;
+							MpPackMLStateComplete(gPackMLCore, 1);
 					
 				END_CASE ;
 				

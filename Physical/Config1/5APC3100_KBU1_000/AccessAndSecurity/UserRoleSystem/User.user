@@ -22,8 +22,8 @@
     </Group>
   </Element>
   <Element ID="admin" Type="User">
-    <Property ID="UserID" Value="2" />
-    <Property ID="Password" Value="FiArjKoT2OOvM0ZPNJm1KwRC/WYbea1BuNb64atDe7ybX3L+eDo=" Description="admin" />
+    <Property ID="UserID" Value="7" />
+    <Property ID="Password" Value="Qgu5/PK7A+3Bt3/45SokQGt0DC9iNUtblKnAzG+w+3JJ4vaLpEg=" Description="admin" />
     <Group ID="Roles">
       <Property ID="Role[1]" Value="Administrators" />
     </Group>
