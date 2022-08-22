@@ -73,6 +73,7 @@ ACTION Starting:
 				END_FOR;
 				IF AimIsGood=TRUE THEN
 					y:=0;
+					P1P2_Ok:=0;
 					Step:=ROBOTCTRL_CALCULATE;
 					Step_State := 'CALCULATE';
 					Camera_0.diTrigger := 0;

@@ -1,29 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="FilesContent" height="650" width="1030" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Table" id="Table1" top="120" left="20" width="840" height="340" zIndex="0" refreshRate="100" wordWrap="true" fontSize="16px" headerFontSize="18px">
+    <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="0" left="0" width="1040" height="660" zIndex="0">
       <Widgets>
-        <Widget xsi:type="widgets.brease.TableItem" id="tiName" zIndex="0" columnWidth="320" text="Name" headerFontSize="20px" headerBold="true" fontSize="20px" />
-        <Widget xsi:type="widgets.brease.TableItemDateTime" id="tiLastModified" zIndex="1" columnWidth="220" format="d" text="Last modified" headerFontSize="20px" fontSize="20px" />
-        <Widget xsi:type="widgets.brease.TableItem" id="tiFileSize" zIndex="2" columnWidth="100" text="Size" headerFontSize="20px" bold="true" fontSize="20px" />
-        <Widget xsi:type="widgets.brease.TableItem" id="tiFileType" zIndex="3" columnWidth="200" text="File type" />
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" zIndex="0" text="TabItem1">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.UserList" id="UserList" top="50" left="219" width="801" height="550" zIndex="0" itemsPerPage="7" permissionOperate="['Administrators']" permissionView="['Administrators', 'Everyone', 'Operator']">
+              <Widgets>
+                <Widget xsi:type="widgets.brease.UserListItem" id="UserListItem1" width="400" zIndex="0" text="UserName" />
+                <Widget xsi:type="widgets.brease.UserListItem" id="UserListItem2" width="360" zIndex="1" columnType="Roles" text="Role" />
+              </Widgets>
+            </Widget>
+            <Widget xsi:type="widgets.brease.Button" id="btnAddUser" top="45" left="30" width="160" height="140" zIndex="1" image="Media/SymbolLib/User/AddUser.svg" imageAlign="top" text="Add User" cornerRadius="15px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Button" id="btnDeleteUser" top="205" left="30" width="160" height="140" zIndex="2" image="Media/SymbolLib/User/DeleteUser.svg" imageAlign="top" text="Delete User" cornerRadius="15px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Button" id="btnEditUser" top="365" left="30" width="160" height="140" zIndex="3" image="Media/SymbolLib/Edit/Edit.svg" imageAlign="top" text="Edit User" cornerRadius="15px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" zIndex="1" text="TabItem2">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnRefresh" top="50" left="60" width="50" height="50" zIndex="0" image="Media/SymbolLib/Symbols/Restart.svg" />
+            <Widget xsi:type="widgets.brease.TextInput" id="tiFilter" top="50" left="240" width="280" height="50" zIndex="1" />
+            <Widget xsi:type="widgets.brease.Label" id="lblFilter" top="10" left="340" zIndex="2" text="Filter:" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="ddbSortOrder" top="50" left="540" width="280" height="50" zIndex="3" displaySettings="text" listPosition="bottom" listWidth="300" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.Label" id="lblSort" top="10" left="640" zIndex="4" text="Sort:" fontSize="20px" italic="false" />
+            <Widget xsi:type="widgets.brease.Table" id="Table1" top="130" left="20" width="840" height="340" zIndex="5" refreshRate="100" wordWrap="true" fontSize="16px" headerFontSize="18px">
+              <Widgets>
+                <Widget xsi:type="widgets.brease.TableItem" id="tiName" zIndex="0" columnWidth="320" text="Name" headerFontSize="20px" headerBold="true" fontSize="20px" />
+                <Widget xsi:type="widgets.brease.TableItemDateTime" id="tiLastModified" zIndex="1" columnWidth="220" format="d" text="Last modified" headerFontSize="20px" fontSize="20px" />
+                <Widget xsi:type="widgets.brease.TableItem" id="tiFileSize" zIndex="2" columnWidth="100" text="Size" headerFontSize="20px" bold="true" fontSize="20px" />
+                <Widget xsi:type="widgets.brease.TableItem" id="tiFileType" zIndex="3" columnWidth="200" text="File type" />
+              </Widgets>
+            </Widget>
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnOpenFolder" top="530" left="20" width="200" height="60" zIndex="6" text="Enter folder" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnFolderUp" top="530" left="260" width="200" height="60" zIndex="7" text="Folder ↑" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnDeleteFile" top="130" left="880" width="140" height="60" zIndex="8" text="Delete" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnCopyFile" top="230" left="880" width="140" height="60" zIndex="9" text="Copy" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnPasteFile" top="330" left="880" width="140" height="60" zIndex="10" text="Paste" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.TextInput" id="tiNewName" top="540" left="500" width="280" height="50" zIndex="11" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnRenameFile" top="530" left="820" width="200" height="60" zIndex="12" text="Change name" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnCreateFolder" top="430" left="880" width="140" height="60" zIndex="13" text="New folder" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.TextOutput" id="toPath" top="470" left="460" width="260" height="60" zIndex="14" borderStyle="inset" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.Label" id="lblPath" top="470" left="300" width="140" height="60" zIndex="15" text="Path:" textAlign="right" fontSize="20px" bold="true" />
+          </Widgets>
+        </Widget>
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.TextInput" id="tiFilter" top="60" left="120" width="280" height="50" zIndex="1" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnOpenFolder" top="480" left="60" width="200" height="60" zIndex="2" text="Enter folder" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnRefresh" top="60" left="60" width="50" height="50" zIndex="3" image="Media/SymbolLib/Symbols/Restart.svg" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnFolderUp" top="480" left="340" width="200" height="60" zIndex="4" text="Folder ↑" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnDeleteFile" top="120" left="880" width="140" height="60" zIndex="5" text="Delete" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnCopyFile" top="220" left="880" width="140" height="60" zIndex="6" text="Copy" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnPasteFile" top="320" left="880" width="140" height="60" zIndex="7" text="Paste" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.TextInput" id="tiNewName" top="580" left="20" width="280" height="50" zIndex="8" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnRenameFile" top="575" left="340" width="200" height="60" zIndex="9" text="Change name" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnCreateFolder" top="420" left="880" width="140" height="60" zIndex="10" text="New folder" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.DropDownBox" id="ddbSortOrder" top="60" left="440" width="280" height="50" zIndex="11" displaySettings="text" listPosition="bottom" listWidth="300" fontSize="20px" />
-    <Widget xsi:type="widgets.brease.Label" id="lblFilter" top="20" left="220" zIndex="12" text="Filter:" fontSize="20px" />
-    <Widget xsi:type="widgets.brease.Label" id="lblSort" top="20" left="540" zIndex="13" text="Sort:" fontSize="20px" italic="false" />
-    <Widget xsi:type="widgets.brease.TextOutput" id="toPath" top="540" left="740" width="260" height="60" zIndex="14" borderStyle="inset" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.Label" id="lblPath" top="540" left="620" width="140" height="60" zIndex="15" text="Path:" textAlign="right" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.NavigationButton" id="NavigationButton1" top="20" left="880" width="140" height="80" zIndex="16" pageId="UsersPage" text="USERS" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
   </Widgets>
 </Content>

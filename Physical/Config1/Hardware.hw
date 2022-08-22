@@ -20,6 +20,7 @@
       <Parameter ID="Mode" Value="Manual" />
       <Parameter ID="InternetAddress" Value="192.168.0.10" />
       <Parameter ID="SubnetMask" Value="255.255.255.0" />
+      <Parameter ID="InaPort" Value="81" />
       <Parameter ID="ActivateSnmp" Value="2" />
     </Connector>
     <Connector Name="IF4">

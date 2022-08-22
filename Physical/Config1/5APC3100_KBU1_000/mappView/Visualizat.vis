@@ -20,11 +20,11 @@
     <BindingsSet refId="AlarmContent_binding" />
     <BindingsSet refId="ManualContent_binding" />
     <BindingsSet refId="LoginContent_binding" />
-    <BindingsSet refId="AutoContent_binding" />
     <BindingsSet refId="FilesContent_binding" />
     <BindingsSet refId="ReceptureContent_binding" />
     <BindingsSet refId="AuditContent_binding" />
     <BindingsSet refId="content_1_binding" />
+    <BindingsSet refId="AutoContent_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="TopContent_eventbinding" />

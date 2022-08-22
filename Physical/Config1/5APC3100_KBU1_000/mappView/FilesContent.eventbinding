@@ -88,5 +88,35 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="FilesContent.btnAddUser.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="FilesContent" widgetRefId="btnAddUser" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="FilesContent" widgetRefId="UserList">
+            <Method xsi:type="widgets.brease.UserList.Action.OpenModifyUserDialog" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.btnEditUser.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="FilesContent" widgetRefId="btnEditUser" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="FilesContent" widgetRefId="UserList">
+            <Method xsi:type="widgets.brease.UserList.Action.OpenAddUserDialog" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.btnDeleteUser.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="FilesContent" widgetRefId="btnDeleteUser" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="FilesContent" widgetRefId="UserList">
+            <Method xsi:type="widgets.brease.UserList.Action.DeleteUser" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

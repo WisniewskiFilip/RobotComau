@@ -91,6 +91,8 @@
         <Variable Name="PackML_State" />
         <Variable Name="gIsPosGood" EnableArrayElements="True" />
         <Variable Name="gSwapFlag" />
+        <Variable Name="diDemo" />
+        <Variable Name="gCompliteFlag" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0">

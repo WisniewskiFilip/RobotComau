@@ -11,5 +11,15 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="AutoContent.SWAP1.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="AutoContent" widgetRefId="SWAP1" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:diDemo">
+            <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

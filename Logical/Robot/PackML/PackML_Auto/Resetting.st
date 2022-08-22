@@ -7,9 +7,9 @@ ACTION Resetting:
 		MpPackMLMode_Auto.Reset := 0;
 		MpPackMLMode_Auto.Stop := 0;
 		PackML_State := 'RESETTING';
-		
+		gCompliteFlag:=FALSE;
 		y := 0;
-		
+		NotFirstFlag:=FALSE;
 		Camera_0.ImageAcq := Camera_0.Ready;
 		
 		IF NOT MpRoboArm6Axis_0.PowerOn THEN
@@ -40,12 +40,12 @@ ACTION Resetting:
 				IF MpRoboArm6Axis_0.IsHomed THEN
 					MpRoboArm6Axis_0.Home := FALSE; 
 					(*Step := ROBOTCTRL_READY;*)
-				(*	Step_State := 'READY';*)
+					(*	Step_State := 'READY';*)
 					MpPackMLStateComplete(gPackMLCore, 1);
 					
 				END_IF; 
 			
-				END_CASE;
+		END_CASE;
 		
 	END_IF; 
 END_ACTION

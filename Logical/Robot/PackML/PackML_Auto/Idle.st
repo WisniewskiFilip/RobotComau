@@ -20,7 +20,7 @@ ACTION Idle:
 					MpPackMLMode_Auto.Stop := TRUE;
 				END_IF;
 			 
-				IF diStart THEN // diStart is active robot starts procedure 
+				IF diStart  THEN // diStart is active robot starts procedure 
 					diStart := FALSE;
 					MpPackMLMode_Auto.Start := TRUE;
 					Step := ROBOTCTRL_CHECK;

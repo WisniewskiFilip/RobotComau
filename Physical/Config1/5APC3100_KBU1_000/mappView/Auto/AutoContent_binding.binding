@@ -27,10 +27,7 @@
 
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.Enable" attribute="value" />
-<Target xsi:type="brease" contentRefId="AutoContent" widgetRefId="Rectangle23" attribute="visible" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.IsHomed" attribute="value" />
 <Target xsi:type="brease" contentRefId="AutoContent" widgetRefId="Rectangle21" attribute="visible" />
@@ -91,5 +88,6 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
 <Target xsi:type="brease" contentRefId="AutoContent" widgetRefId="MomentaryPushButton2" attribute="visible" />
 </Binding>
-</Bindings>
+
+	</Bindings>
 </BindingsSet>

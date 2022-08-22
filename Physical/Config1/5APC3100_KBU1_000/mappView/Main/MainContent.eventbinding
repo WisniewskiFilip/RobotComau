@@ -462,5 +462,25 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="MainContent.SWAP.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="MainContent" widgetRefId="SWAP" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSwapFlag">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="MainContent.SWAP1.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="MainContent" widgetRefId="SWAP1" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:diDemo">
+            <Method xsi:type="opcUa.NodeAction.ToggleValueBool" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>

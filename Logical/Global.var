@@ -38,6 +38,11 @@ VAR
 END_VAR
 VAR CONSTANT
 	LowSpeed : UDINT := 6000;
+END_VAR
+VAR
+	gCompliteFlag : BOOL;
+END_VAR
+VAR CONSTANT
 	MaxSpeed : UDINT := 20000;
 END_VAR
 VAR
@@ -51,6 +56,7 @@ VAR
 	P2 : McPointType := (Pos:=(X:=410,Y:=200,Z:=70),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)); (*second robot position*)
 	P2up : McPointType := (Pos:=(X:=410,Y:=200,Z:=120),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)); (*position over second robot  position*)
 	PixelRange_0 : PixelCounterLimits;
+	pom : ARRAY[0..13] OF BOOL;
 	PZ : McPointType := (Pos:=(X:=435,Y:=0,Z:=685),Orient:=(Angle1:=0,Angle2:=90,Angle3:=0));
 END_VAR
 VAR RETAIN
@@ -59,4 +65,5 @@ END_VAR
 VAR
 	y : USINT; (*is used to execute moves *)
 	z : INT;
+	gDemoActPos : ARRAY[0..13] OF INT;
 END_VAR
