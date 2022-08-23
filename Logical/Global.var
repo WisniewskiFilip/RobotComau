@@ -64,6 +64,7 @@ VAR RETAIN
 END_VAR
 VAR
 	y : USINT; (*is used to execute moves *)
+	gHomeIsBad : BOOL;
 	z : INT;
 	gDemoActPos : ARRAY[0..13] OF INT;
 END_VAR

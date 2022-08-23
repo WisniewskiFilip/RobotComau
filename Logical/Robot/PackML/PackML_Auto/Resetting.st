@@ -16,6 +16,14 @@ ACTION Resetting:
 			MpPackMLMode_Auto.Stop := 1;
 		END_IF
 		
+		FOR x:=0 TO 5 DO 
+			FOR y:=0 TO 17 DO 
+				IF  RestorePos[x].Data[y]=0 THEN
+				emptyPos:=emptyPos+1;	
+				END_IF
+			END_FOR;
+		END_FOR;
+		
 		CASE Step OF
 			ROBOTCTRL_POWER:
 				
@@ -32,6 +40,9 @@ ACTION Resetting:
 				END_IF;
 		
 			ROBOTCTRL_HOME: 
+				IF  emptyPos=108 THEN
+					gHomeIsBad:=TRUE;
+				END_IF
 				MpRoboArm6Axis_0.Home := TRUE; 
 				Step := ROBOTCTRL_WAIT_HOME;
 				Step_State := 'WAIT_HOME';
