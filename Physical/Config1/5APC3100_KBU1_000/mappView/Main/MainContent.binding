@@ -103,10 +103,7 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
 <Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton7" attribute="visible" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="TabItem2" attribute="visible" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:diAck" attribute="value" />
 <Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton7" attribute="value" />
@@ -139,10 +136,7 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
 <Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton8" attribute="visible" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="SWAP1" attribute="visible" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
 <Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton3" attribute="visible" />

@@ -40,9 +40,6 @@ ACTION Resetting:
 				END_IF;
 		
 			ROBOTCTRL_HOME: 
-				IF  emptyPos=108 THEN
-					gHomeIsBad:=TRUE;
-				END_IF
 				MpRoboArm6Axis_0.Home := TRUE; 
 				Step := ROBOTCTRL_WAIT_HOME;
 				Step_State := 'WAIT_HOME';

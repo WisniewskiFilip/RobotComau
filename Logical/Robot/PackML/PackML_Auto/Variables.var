@@ -1,4 +1,3 @@
 VAR
 	NotFirstFlag : BOOL;
-	emptyPos : USINT;
 END_VAR

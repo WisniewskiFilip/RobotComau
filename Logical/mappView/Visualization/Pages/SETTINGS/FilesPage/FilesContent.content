@@ -3,7 +3,7 @@
   <Widgets>
     <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="0" left="0" width="1040" height="660" zIndex="0">
       <Widgets>
-        <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" zIndex="0" text="TabItem1">
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" zIndex="0" text="Users">
           <Widgets>
             <Widget xsi:type="widgets.brease.UserList" id="UserList" top="50" left="219" width="801" height="550" zIndex="0" itemsPerPage="7" permissionOperate="['Administrators']" permissionView="['Administrators', 'Everyone', 'Operator']">
               <Widgets>
@@ -16,7 +16,7 @@
             <Widget xsi:type="widgets.brease.Button" id="btnEditUser" top="365" left="30" width="160" height="140" zIndex="3" image="Media/SymbolLib/Edit/Edit.svg" imageAlign="top" text="Edit User" cornerRadius="15px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" />
           </Widgets>
         </Widget>
-        <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" zIndex="1" text="TabItem2">
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" zIndex="1" text="Files">
           <Widgets>
             <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnRefresh" top="50" left="60" width="50" height="50" zIndex="0" image="Media/SymbolLib/Symbols/Restart.svg" />
             <Widget xsi:type="widgets.brease.TextInput" id="tiFilter" top="50" left="240" width="280" height="50" zIndex="1" />

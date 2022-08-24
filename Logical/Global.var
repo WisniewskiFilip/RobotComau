@@ -20,7 +20,7 @@ VAR
 	gPosBuffor : ARRAY[0..13] OF BOOL; (*positions that can be used as buffor *)
 END_VAR
 VAR CONSTANT
-	gRobPos : ARRAY[0..13] OF McPointType := [(Pos:=(X:=510,Y:=280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=510,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=510,Y:=-280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=300,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-300,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0))]; (*predefined robot positions*)
+	gRobPos : ARRAY[0..13] OF McPointType := [(Pos:=(X:=515,Y:=280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=515,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=515,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=515,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=515,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=515,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=515,Y:=-280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=300,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=200,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=0,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-100,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-200,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-300,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0))]; (*predefined robot positions*)
 END_VAR
 VAR
 	gSafety : gSafeType; (*safety*)
@@ -43,7 +43,7 @@ VAR
 	gCompliteFlag : BOOL;
 END_VAR
 VAR CONSTANT
-	MaxSpeed : UDINT := 20000;
+	MaxSpeed : UDINT := 30000;
 END_VAR
 VAR
 	MpPackMLCore_0 : MpPackMLCore; (*PACK ML*)
@@ -64,7 +64,7 @@ VAR RETAIN
 END_VAR
 VAR
 	y : USINT; (*is used to execute moves *)
-	gHomeIsBad : BOOL;
+	emptyPos : USINT;
 	z : INT;
 	gDemoActPos : ARRAY[0..13] OF INT;
 END_VAR

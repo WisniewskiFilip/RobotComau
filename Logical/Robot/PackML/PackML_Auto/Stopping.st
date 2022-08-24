@@ -5,7 +5,7 @@ ACTION Stopping:
 		1) THEN
 		
 		PackML_State := 'STOPPING';
-	
+		gCompliteFlag:=FALSE;
 		//STOP EVERYTHING
 		MpRoboArm6Axis_0.Stop := TRUE;
 		IF NOT MpRoboArm6Axis_0.InMotion THEN
