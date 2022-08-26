@@ -25,6 +25,7 @@
     <BindingsSet refId="content_1_binding" />
     <BindingsSet refId="AutoContent_binding" />
     <BindingsSet refId="FilesContent_binding" />
+    <BindingsSet refId="SwapDialog_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="TopContent_eventbinding" />
@@ -38,12 +39,13 @@
     <EventBindingsSet refId="ReceptureContent_eventbinding" />
     <EventBindingsSet refId="FilesContent_eventbinding" />
     <EventBindingsSet refId="AuditContent_eventbinding" />
+    <EventBindingsSet refId="SwapDialog_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="LoginDialog" />
     <Dialog refId="InfoDialog" />
     <Dialog refId="TiaPortalDialog" />
-    <Dialog refId="dialog_0" />
+    <Dialog refId="SWAP" />
   </Dialogs>
   <Contents>
     <Content refId="LeftContent" />
@@ -64,7 +66,9 @@
     <Content refId="History" />
   </Contents>
   <SnippetsSets />
-  <VariablesSets />
+  <VariablesSets>
+    <VariablesSet refId="svar_0" />
+  </VariablesSets>
   <ExpressionsSets />
   <Configurations>
     <Configuration key="activityCount" value="false" />

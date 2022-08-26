@@ -28,6 +28,14 @@ ACTION Execute:
 			ROBOTCTRL_CALCULATE:	
 				//Reseting buffor 
 				//blocks which can be used as buffor
+				FOR x:=0 TO SizeOfArray DO 
+					IF  gActPos[x]=0 THEN
+						gSwapEnable[x]:=FALSE;
+					ELSE 
+						gSwapEnable[x]:=TRUE;
+					END_IF;
+				END_FOR;
+				
 				IF diDemo THEN
 					IF NOT NotFirstFlag THEN
 						FOR x:=0 TO SizeOfArray DO 

@@ -19,5 +19,7 @@
     <Object Type="File">AuditContent.binding</Object>
     <Object Type="File">AuditContent.eventbinding</Object>
     <Object Type="File">content_1.binding</Object>
+    <Object Type="File">SwapDialog.binding</Object>
+    <Object Type="File">SwapDialog.eventbinding</Object>
   </Objects>
 </Package>

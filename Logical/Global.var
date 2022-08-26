@@ -65,6 +65,8 @@ END_VAR
 VAR
 	y : USINT; (*is used to execute moves *)
 	emptyPos : USINT;
+	gSwapEnable : ARRAY[0..13] OF BOOL; (*list of targets that can be swaped*)
 	z : INT;
+	gSesion : USINT := 0; (*Substitutes sesion int*)
 	gDemoActPos : ARRAY[0..13] OF INT;
 END_VAR

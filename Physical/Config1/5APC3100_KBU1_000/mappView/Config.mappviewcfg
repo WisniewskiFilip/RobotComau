@@ -14,7 +14,7 @@
       </Group>
       <Group ID="DiagnosticPageConf">
         <Selector ID="DiagnosticPageSelection" Value="2">
-          <Property ID="DiagnosticPageRole[1]" Value="Everyone" />
+          <Property ID="DiagnosticPageRole[1]" Value="Administrators" />
         </Selector>
       </Group>
       <Selector ID="Deployment" Value="DeploymentPLC" />
