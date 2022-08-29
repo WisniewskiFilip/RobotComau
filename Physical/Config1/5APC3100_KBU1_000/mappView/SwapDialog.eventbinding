@@ -4,22 +4,11 @@
     <EventBinding id="SwapDialog.ToggleButton13.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton13" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -34,13 +23,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -50,22 +32,11 @@
     <EventBinding id="SwapDialog.ToggleButton14.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton14" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -80,13 +51,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -96,22 +60,11 @@
     <EventBinding id="SwapDialog.ToggleButton11.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton11" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -126,13 +79,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -142,22 +88,11 @@
     <EventBinding id="SwapDialog.ToggleButton12.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton12" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -172,13 +107,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -188,22 +116,11 @@
     <EventBinding id="SwapDialog.ToggleButton9.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton9" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -218,13 +135,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -234,22 +144,11 @@
     <EventBinding id="SwapDialog.ToggleButton10.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton10" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -264,13 +163,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -280,22 +172,11 @@
     <EventBinding id="SwapDialog.ToggleButton7.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton7" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2 OR gSesion&gt;=2">
         <Sequence>
@@ -310,13 +191,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -326,22 +200,11 @@
     <EventBinding id="SwapDialog.ToggleButton8.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton8" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -359,35 +222,17 @@
               </Target>
             </Action>
           </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
         </Sequence>
       </EventHandler>
     </EventBinding>
     <EventBinding id="SwapDialog.ToggleButton5.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton5" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2 OR gSesion&gt;=2">
         <Sequence>
@@ -405,35 +250,17 @@
               </Target>
             </Action>
           </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
         </Sequence>
       </EventHandler>
     </EventBinding>
     <EventBinding id="SwapDialog.ToggleButton6.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton6" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -448,13 +275,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -464,22 +284,11 @@
     <EventBinding id="SwapDialog.ToggleButton3.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton3" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -494,13 +303,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -510,22 +312,11 @@
     <EventBinding id="SwapDialog.ToggleButton4.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton4" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -540,13 +331,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -556,22 +340,11 @@
     <EventBinding id="SwapDialog.ToggleButton1.Click">
       <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="SwapDialog" widgetRefId="ToggleButton1" event="Click" />
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -586,13 +359,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
@@ -607,22 +373,11 @@
         </ReadTarget>
       </Operand>
       <EventHandler>
-        <Sequence>
-          <Step order="0">
-            <Action>
-              <Target xsi:type="session.VariableAction" refId="clkCount">
-                <Method xsi:type="session.VariableAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="1">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
-              </Target>
-            </Action>
-          </Step>
-        </Sequence>
+        <Action>
+          <Target xsi:type="session.VariableAction" refId="clkCount">
+            <Method xsi:type="session.VariableAction.AddValue" value="1" />
+          </Target>
+        </Action>
       </EventHandler>
       <EventHandler condition="clkCount&gt;=2">
         <Sequence>
@@ -637,13 +392,6 @@
             <Action>
               <Target xsi:type="session.VariableAction" refId="clkCount">
                 <Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
-              </Target>
-            </Action>
-          </Step>
-          <Step order="2">
-            <Action>
-              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSesion">
-                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
               </Target>
             </Action>
           </Step>
