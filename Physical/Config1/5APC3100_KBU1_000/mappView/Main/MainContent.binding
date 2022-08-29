@@ -95,14 +95,7 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:PackML_State" attribute="value" />
 <Target xsi:type="brease" contentRefId="MainContent" widgetRefId="TextOutput1" attribute="value" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="auto3" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton7" attribute="visible" />
-</Binding>
+
 
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:diAck" attribute="value" />
@@ -128,30 +121,12 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.Home" attribute="value" />
 <Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton9" attribute="value" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton2" attribute="visible" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton8" attribute="visible" />
-</Binding>
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton3" attribute="visible" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton4" attribute="visible" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="SWAP" attribute="visible" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:diAuto" attribute="value" />
-<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton9" attribute="visible" />
-</Binding>
+
+
+
+
+
+
 </Bindings>
 </BindingsSet>

@@ -7,7 +7,7 @@ ACTION Complete:
 		PackML_State := 'COMPLETE';
 		gCompliteFlag:=TRUE;
 		//MpPackMLMode_Auto.Stop := 1;
-
+	
 		IF diReset THEN
 			MpPackMLStateComplete(gPackMLCore, 1);
 			MpPackMLMode_Auto.Reset := 1;

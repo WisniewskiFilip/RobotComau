@@ -11,6 +11,7 @@ ACTION Stopping:
 		IF NOT MpRoboArm6Axis_0.InMotion THEN
 				MpRoboArm6Axis_0.Stop := FALSE;
 			MpRoboArm6Axis_0.Power := FALSE; 
+			emptyPos:=0;
 			diStop := 0;
 
 		

@@ -95,7 +95,7 @@ ACTION Execute:
 							DemoIndex[0]:=2;
 							DemoIndex[1]:=1;
 							DemoIndex[2]:=4;
-							FOR x:=0 TO SizeOfArray DO 
+							FOR x:=SizeOfArray TO 0 BY -1 DO 
 								IF DemoY <IndexSize THEN
 									IF gPosBuffor[x] THEN
 										DemoAimPos[x]:=DemoIndex[DemoY];
@@ -107,6 +107,7 @@ ACTION Execute:
 								ELSE
 									DemoAimPos[x]:=0;
 								END_IF;
+						
 							END_FOR;		
 							Step:=ROBOTCTRL_CALCULATE_P1;
 							Demo:=2;
@@ -139,7 +140,7 @@ ACTION Execute:
 							DemoIndex[0]:=1;
 							DemoIndex[1]:=4;
 							DemoIndex[2]:=2;
-							FOR x:=0 TO SizeOfArray DO 
+							FOR x:=SizeOfArray TO 0 BY -1 DO 
 								IF DemoY <IndexSize THEN
 									IF gPosBuffor[x] THEN
 										DemoAimPos[x]:=DemoIndex[DemoY];

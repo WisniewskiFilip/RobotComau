@@ -11,7 +11,7 @@ ACTION Resetting:
 		y := 0;
 		NotFirstFlag:=FALSE;
 		Camera_0.ImageAcq := Camera_0.Ready;
-		
+		emptyPos:=0;
 		IF NOT MpRoboArm6Axis_0.PowerOn THEN
 			MpPackMLMode_Auto.Stop := 1;
 		END_IF

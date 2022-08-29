@@ -6,7 +6,7 @@ ACTION Stopped:
 		
 		PackML_State := 'STOPPED';
 		MpRoboArm6Axis_0.Power := FALSE; 
-		emptyPos:=0;
+		
 	
 		
 

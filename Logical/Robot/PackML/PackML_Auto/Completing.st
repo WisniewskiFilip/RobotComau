@@ -4,7 +4,7 @@ ACTION Completing:
 		mpPACKML_STATE_COMPLETING,
 		1) THEN
 			PackML_State := 'COMPLETING';
-
+		emptyPos:=0;
 			MpPackMLStateComplete(gPackMLCore, 1);
 		
 		
