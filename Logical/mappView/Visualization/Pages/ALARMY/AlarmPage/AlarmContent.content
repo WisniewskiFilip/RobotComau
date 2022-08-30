@@ -20,7 +20,7 @@
         </Widget>
         <Widget xsi:type="widgets.brease.TabItem" id="HISTORY" left="0" zIndex="1" text="HISTORY">
           <Widgets>
-            <Widget xsi:type="widgets.brease.AlarmHistory" id="AlarmHistory1" top="104" left="20" width="1000" height="496" zIndex="0">
+            <Widget xsi:type="widgets.brease.AlarmHistory" id="AlarmHistory1" top="104" left="20" width="1000" height="496" zIndex="0" itemsPerPage="11">
               <Widgets>
                 <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryTime" width="340" zIndex="0" columnType="timestamp" text="Czas" />
                 <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryInfo" width="520" zIndex="1" text="Informacja" />

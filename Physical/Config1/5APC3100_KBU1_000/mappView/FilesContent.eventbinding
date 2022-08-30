@@ -54,29 +54,6 @@
           </Result>
         </Action>
       </EventHandler>
-      <EventHandler condition="GetMessage =&quot;BUSY&quot;">
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OKCancel" message="Czy chcesz nadpisac plik?" header="UWAGA" />
-          </Target>
-          <Result>
-            <ResultHandler condition="result=4">
-              <Action>
-                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Confirm">
-                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result=8">
-              <Action>
-                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Cancel">
-                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
     </EventBinding>
     <EventBinding id="EventBinding_10">
       <Source xsi:type="clientSystem.Event" event="ContentLoaded" />
