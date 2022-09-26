@@ -41,7 +41,6 @@ ACTION Execute:
 						FOR x:=0 TO SizeOfArray DO 
 							gDemoActPos[x]:=gActPos[x];
 						END_FOR;
-						////// wina braku ruchów to przypisywanie gDemoActPos[x]:=DemoAimPos[x] za ak?ym razem a nie co 3 todo 
 					END_IF;
 	
 					FOR x:=0 TO SizeOfArray DO 

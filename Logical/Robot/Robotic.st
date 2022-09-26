@@ -9,6 +9,7 @@ PZ : McPointType;
 A : McAxisTargetType;
 doMagnet : BOOL;
 y : USINT;
+gWait : REAL;
 MaxSpeed : DINT;
 LowSpeed : DINT;
 
@@ -33,7 +34,7 @@ END_VAR
 	doMagnet := TRUE;
 	END_PATH_SYNCH
 	
-	WaitTime(1);        
+	WaitTime(gWait);        
 	MoveL(P1up); //move over the aim 1 pose
 	Feedrate(MaxSpeed);	
 	MoveL(P2up); //move over the aim 2 pose
@@ -43,7 +44,7 @@ END_VAR
 	DO_PATH_SYNCH
 	doMagnet := FALSE;
 	END_PATH_SYNCH
-	WaitTime(1);
+	WaitTime(gWait);
 	
 	MoveL(P2up); //move over the aim 2 pose
 	Feedrate(MaxSpeed);	

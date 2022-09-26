@@ -448,18 +448,40 @@
         </ReadTarget>
       </Operand>
       <EventHandler condition="X &lt; 450 ">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="MainContent" widgetRefId="lblError">
-            <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="false" />
-          </Target>
-        </Action>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Label.Action" contentRefId="MainContent" widgetRefId="lblError">
+                <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="MainContent" widgetRefId="ImageList1">
+                <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="0" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
       </EventHandler>
       <EventHandler condition="X  &gt; 450 ">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="MainContent" widgetRefId="lblError">
-            <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="true" />
-          </Target>
-        </Action>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Label.Action" contentRefId="MainContent" widgetRefId="lblError">
+                <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="MainContent" widgetRefId="ImageList1">
+                <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="1" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
       </EventHandler>
     </EventBinding>
     <EventBinding id="MainContent.SWAP.Click">

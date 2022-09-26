@@ -5,7 +5,7 @@ PROGRAM _INIT
 	
 	MpRoboArm6Axis_0.Interrupt := 0;
 	MpRoboArm6Axis_0.Continue := 0;
-
+	gWait;
 	MpRoboArm6Axis_0.Override  := 100.0;
 	RoboParameters.CoordSystem := 0; 
 	RoboParameters.Velocity := 100; 
@@ -51,9 +51,9 @@ PROGRAM _CYCLIC
 	
 	//throwing error 
 	IF MpRoboArm6Axis_0.Error THEN
-//		Step := ROBOTCTRL_ERROR;
+		//		Step := ROBOTCTRL_ERROR;
 		MpPackMLMode_Auto.Abort := TRUE;
-//		Step_State := 'ERROR';
+		//		Step_State := 'ERROR';
 	END_IF;
 
 	
@@ -61,8 +61,8 @@ PROGRAM _CYCLIC
 	IF diStop THEN
 		MpRoboArm6Axis_0.Power := 0;
 		MpPackMLMode_Auto.Stop := 1;
-//		Step := ROBOTCTRL_POWER_OFF;
-//		Step_State := 'POWER_OFF';
+		//		Step := ROBOTCTRL_POWER_OFF;
+		//		Step_State := 'POWER_OFF';
 	END_IF
 	
 	MpPackMLCore_0;
@@ -85,6 +85,7 @@ PROGRAM _CYCLIC
 	MpRoboArm6Axis_0.Enable := TRUE;
 	MpRoboArm6Axis_0();
 
+	
 	
 END_PROGRAM
 

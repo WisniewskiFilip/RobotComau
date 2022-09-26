@@ -8,6 +8,7 @@ VAR
 	DetectedScrew : USINT;
 	DetectedScrewWasher : USINT;
 	DetectedSquares : USINT; (*swuare detaction*)
+	Axis  : USINT;
 	DetectedWrench : USINT;
 	diDemo : BOOL; (*enables demo mode*)
 	doMagnet : BOOL; (*MAgnet contorl*)
@@ -20,6 +21,7 @@ VAR
 	gPosBuffor : ARRAY[0..13] OF BOOL; (*positions that can be used as buffor *)
 END_VAR
 VAR CONSTANT
+	gWait : REAL := 0.5;
 	gRobPos : ARRAY[0..13] OF McPointType := [(Pos:=(X:=515,Y:=280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=515,Y:=195,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=515,Y:=95,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=515,Y:=-5,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=515,Y:=-105,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=515,Y:=-205,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=515,Y:=-280,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=295,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=195,Z:=68),Orient:=(Angle1:=0,Angle2:=180)),(Pos:=(X:=410,Y:=95,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-5,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-105,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-205,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0)),(Pos:=(X:=410,Y:=-300,Z:=68),Orient:=(Angle1:=0,Angle2:=180,Angle3:=0))]; (*predefined robot positions*)
 END_VAR
 VAR
@@ -37,13 +39,13 @@ VAR
 	Index : ARRAY[0..2] OF INT := [1,2,4]; (*defines order of moves *)
 END_VAR
 VAR CONSTANT
-	LowSpeed : UDINT := 20000;
+	LowSpeed : UDINT := 10000;
 END_VAR
 VAR
 	gCompliteFlag : BOOL;
 END_VAR
 VAR CONSTANT
-	MaxSpeed : UDINT := 40000;
+	MaxSpeed : UDINT := 20000;
 END_VAR
 VAR
 	MpPackMLCore_0 : MpPackMLCore; (*PACK ML*)

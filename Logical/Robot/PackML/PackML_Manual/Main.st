@@ -1,7 +1,8 @@
 
 PROGRAM _INIT
 	(* Insert code here *)
-	 
+	Axis;
+
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -17,7 +18,7 @@ PROGRAM _CYCLIC
 	
 	VelocityQ;
 	doMagnet;
-	
+	VelocityQQ;
 	RoboParameters.Jog.Velocity[0] := VelocityQ1;
 	RoboParameters.Jog.Velocity[1] := VelocityQ2;
 	RoboParameters.Jog.Velocity[2] := VelocityQ3;

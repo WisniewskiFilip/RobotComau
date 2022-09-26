@@ -41,4 +41,5 @@ VAR
 	VisionCalcDone : BOOL;
 	SwapStep : USINT := 0; (*(SWAP) used in swap procedure *)
 	x : INT := 0;
+	VelocityQQ : REAL;
 END_VAR

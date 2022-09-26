@@ -3,7 +3,7 @@ PROGRAM _INIT
 	MpPackMLCore_0.MpLink := ADR(gPackMLCore);
 	MpPackMLCore_0.Enable := TRUE;
 	
-	
+
 	MpPackMLMode_Auto.MpLink := ADR(gPackMLCore);
 	MpPackMLMode_Auto.Enable := TRUE;
 	MpPackMLMode_Auto.ModeID := 1;

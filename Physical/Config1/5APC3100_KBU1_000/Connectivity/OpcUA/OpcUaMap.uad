@@ -95,6 +95,8 @@
         <Variable Name="gCompliteFlag" />
         <Variable Name="gSwapEnable" EnableArrayElements="True" />
         <Variable Name="gSwapMap" EnableArrayElements="True" />
+        <Variable Name="Axis" />
+        <Variable Name="VelocityQQ" />
       </GlobalVariables>
       <Task Name="Alarms">
         <Variable Name="MpAlarmXCore_0">

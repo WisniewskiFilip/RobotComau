@@ -1,7 +1,7 @@
 
 PROGRAM _INIT
 	(* Insert code here *)
-	 
+	 Axis;
 END_PROGRAM
 
 PROGRAM _CYCLIC

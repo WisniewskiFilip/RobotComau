@@ -3,15 +3,12 @@
   <StartPage pageRefId="MainPage" />
   <Pages>
     <Page refId="MainPage" />
-    <Page refId="AutoPage" />
     <Page refId="ManualPage" />
     <Page refId="AlarmPage" />
     <Page refId="AuditPage" />
     <Page refId="PackMLPage" />
     <Page refId="RecepturePage" />
-    <Page refId="UsersPage" />
     <Page refId="FilesPage" />
-    <Page refId="History" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -54,16 +51,13 @@
     <Content refId="AuditContent" />
     <Content refId="PackMLContent" />
     <Content refId="ReceptureContent" />
-    <Content refId="UsersContent" />
     <Content refId="LoginContent" />
     <Content refId="MainContent" />
-    <Content refId="AutoContent" />
     <Content refId="ManualContent" />
     <Content refId="InfoContent" />
     <Content refId="FilesContent" />
     <Content refId="TiaPortalContent" />
     <Content refId="SwapDialog" />
-    <Content refId="History" />
   </Contents>
   <SnippetsSets />
   <VariablesSets>

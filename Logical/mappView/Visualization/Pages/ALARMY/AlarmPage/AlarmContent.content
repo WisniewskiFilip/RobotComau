@@ -6,8 +6,8 @@
         <Widget xsi:type="widgets.brease.TabItem" id="ALARMS" left="0" zIndex="0" text="ALARMS">
           <Widgets>
             <Widget xsi:type="widgets.brease.Label" id="Label1" top="10" left="20" width="420" height="80" zIndex="0" text="ALARMS" textAlign="center" fontSize="26px" bold="true" />
-            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnAcknowledgeAll" top="10" left="480" width="200" height="80" zIndex="1" text="ACKNOWLAGE ALL" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" permissionOperate="['Administrators']" />
-            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnAcknowledge" top="10" left="760" width="200" height="80" zIndex="2" text="ACKNOWLAGE" borderStyle="inset" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" permissionOperate="['Administrators']" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnAcknowledgeAll" top="10" left="480" width="200" height="80" zIndex="1" text="ACKNOWLAGE ALL" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" permissionOperate="['Administrators']" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnAcknowledge" top="10" left="760" width="200" height="80" zIndex="2" text="ACKNOWLAGE" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" permissionOperate="['Administrators']" />
             <Widget xsi:type="widgets.brease.AlarmList" id="AlarmList1" top="109" left="20" width="1000" height="492" zIndex="3" itemsPerPage="6" tabIndex="0">
               <Widgets>
                 <Widget xsi:type="widgets.brease.AlarmListItem" id="AlarmListTime" width="300" zIndex="0" columnType="timestamp" text="Czas" />
