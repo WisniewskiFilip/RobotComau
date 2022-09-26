@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Program" Language="IEC">AuditProgram</Object>
+    <Object Type="File">User.tmx</Object>
+    <Object Type="File">Project.language</Object>
+    <Object Type="File">Event.tmx</Object>
+    <Object Type="File">Recipe.tmx</Object>
+  </Objects>
+</Package>

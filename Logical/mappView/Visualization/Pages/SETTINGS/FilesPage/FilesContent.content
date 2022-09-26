@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="FilesContent" height="650" width="1030" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="0" left="0" width="1040" height="660" zIndex="0">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" zIndex="0" text="Users">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.UserList" id="UserList" top="50" left="219" width="801" height="550" zIndex="0" itemsPerPage="10" permissionOperate="['Administrators']" permissionView="['Administrators', 'Everyone', 'Operator']">
+              <Widgets>
+                <Widget xsi:type="widgets.brease.UserListItem" id="UserListItem1" width="400" zIndex="0" text="UserName" />
+                <Widget xsi:type="widgets.brease.UserListItem" id="UserListItem2" width="360" zIndex="1" columnType="Roles" text="Role" />
+              </Widgets>
+            </Widget>
+            <Widget xsi:type="widgets.brease.Button" id="btnAddUser" top="45" left="30" width="160" height="140" zIndex="1" image="Media/SymbolLib/User/AddUser.svg" text="Add User" cornerRadius="15px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Button" id="btnDeleteUser" top="205" left="30" width="160" height="140" zIndex="2" image="Media/SymbolLib/User/DeleteUser.svg" imageAlign="top" text="Delete User" cornerRadius="15px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Button" id="btnEditUser" top="365" left="30" width="160" height="140" zIndex="3" image="Media/SymbolLib/Edit/Edit.svg" imageAlign="top" text="Edit User" cornerRadius="15px" backColor="rgba(255, 140, 0, 1)" fontSize="18px" bold="true" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" zIndex="1" text="Files">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnRefresh" top="50" left="60" width="50" height="50" zIndex="0" image="Media/SymbolLib/Symbols/Restart.svg" />
+            <Widget xsi:type="widgets.brease.TextInput" id="tiFilter" top="50" left="240" width="280" height="50" zIndex="1" />
+            <Widget xsi:type="widgets.brease.Label" id="lblFilter" top="10" left="340" zIndex="2" text="Filter:" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.DropDownBox" id="ddbSortOrder" top="50" left="540" width="280" height="50" zIndex="3" displaySettings="text" listPosition="bottom" listWidth="300" fontSize="20px" />
+            <Widget xsi:type="widgets.brease.Label" id="lblSort" top="10" left="640" zIndex="4" text="Sort:" fontSize="20px" italic="false" />
+            <Widget xsi:type="widgets.brease.Table" id="Table1" top="130" left="20" width="840" height="340" zIndex="5" refreshRate="100" wordWrap="true" fontSize="16px" headerFontSize="18px">
+              <Widgets>
+                <Widget xsi:type="widgets.brease.TableItem" id="tiName" zIndex="0" columnWidth="320" text="Name" headerFontSize="20px" headerBold="true" fontSize="20px" />
+                <Widget xsi:type="widgets.brease.TableItemDateTime" id="tiLastModified" zIndex="1" columnWidth="220" format="d" text="Last modified" headerFontSize="20px" fontSize="20px" />
+                <Widget xsi:type="widgets.brease.TableItem" id="tiFileSize" zIndex="2" columnWidth="100" text="Size" headerFontSize="20px" bold="true" fontSize="20px" />
+                <Widget xsi:type="widgets.brease.TableItem" id="tiFileType" zIndex="3" columnWidth="200" text="File type" />
+              </Widgets>
+            </Widget>
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnOpenFolder" top="530" left="20" width="200" height="60" zIndex="6" text="Enter folder" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnFolderUp" top="530" left="260" width="200" height="60" zIndex="7" text="Folder ↑" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnDeleteFile" top="130" left="880" width="140" height="60" zIndex="8" text="Delete" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnCopyFile" top="230" left="880" width="140" height="60" zIndex="9" text="Copy" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnPasteFile" top="330" left="880" width="140" height="60" zIndex="10" text="Paste" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.TextInput" id="tiNewName" top="540" left="500" width="280" height="50" zIndex="11" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnRenameFile" top="530" left="820" width="200" height="60" zIndex="12" text="Change name" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="btnCreateFolder" top="430" left="880" width="140" height="60" zIndex="13" text="New folder" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.TextOutput" id="toPath" top="470" left="460" width="260" height="60" zIndex="14" borderStyle="inset" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.Label" id="lblPath" top="470" left="300" width="140" height="60" zIndex="15" text="Path:" textAlign="right" fontSize="20px" bold="true" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="Calibration" left="0" zIndex="2" text="Calibration">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton3" top="470" left="860" width="140" height="130" zIndex="0" text="+" cornerRadius="10px" backColor="rgba(255, 128, 0, 1)" fontSize="100px" bold="true" italic="false" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="470" left="520" width="140" height="130" zIndex="1" text="-" cornerRadius="10px" backColor="rgba(255, 128, 0, 1)" fontSize="100px" bold="true" italic="false" />
+            <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput2" top="510" left="680" width="160" height="70" zIndex="2" unit="{'metric':'DD','imperial':'TAN','imperial-us':'TAN'}" unitAlign="right" textAlign="center" />
+            <Widget xsi:type="widgets.brease.Button" id="Button1" top="10" left="560" width="420" height="100" zIndex="3" text="HOME" cornerRadius="10px" backColor="rgba(0, 255, 0, 1)" fontSize="30px" bold="true" visible="false" />
+            <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput1" top="270" left="520" height="60" zIndex="4" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.ImageList" id="ImageList1" top="-30" left="-60" width="580" height="670" zIndex="5" imageList="['Media/Images/Comau._Axis0.png', 'Media/Images/Comau._Axis1.png', 'Media/Images/Comau._Axis2.png', 'Media/Images/Comau._Axis3.png', 'Media/Images/Comau._Axis4.png', 'Media/Images/Comau._Axis5.png', 'Media/Images/Comau.png']" selectedIndex="6" />
+            <Widget xsi:type="widgets.brease.Label" id="Label1" top="170" left="660" width="200" height="90" zIndex="6" text="Velocity" textAlign="center" bold="true" />
+            <Widget xsi:type="widgets.brease.Label" id="Label2" top="470" left="680" width="160" zIndex="7" text="Position" textAlign="center" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton5" top="330" left="520" width="220" height="110" zIndex="8" text="PREVIOUS" cornerRadius="10px" backColor="rgba(255, 128, 0, 1)" fontSize="30px" bold="true" italic="false" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton6" top="330" left="780" width="220" height="110" zIndex="9" text="NEXT" cornerRadius="10px" backColor="rgba(255, 128, 0, 1)" fontSize="30px" bold="true" italic="false" />
+            <Widget xsi:type="widgets.brease.NumericInput" id="VelocityQQ" top="230" left="680" width="160" height="90" zIndex="10" maxValue="30" unit="{'metric':'C16','imperial':'TAN','imperial-us':'TAN'}" unitAlign="right" cornerRadius="10px" borderStyle="inset" />
+          </Widgets>
+        </Widget>
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

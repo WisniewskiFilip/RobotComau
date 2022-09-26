@@ -1,0 +1,28 @@
+VAR
+	WrenchPosible : BOOL;
+	Wrench : BOOL;
+	testString : STRING[200] := '{"specRows": [ {"from":0, "to":3, "visible":true}, {"from":4, "to":49, "visible":false}]}';
+	tempString : STRING[200];
+	tableShowLimit : INT;
+	tableConfig : STRING[200];
+	tabInfo : TabInfo;
+	ScrewWasherPosible : BOOL;
+	ScrewWasher : BOOL;
+	ScrewPosible : BOOL;
+	Screw : BOOL;
+	PriorytetW : INT;
+	PriorytetSW : INT;
+	PriorytetS : INT;
+	name2 : STRING[80];
+	name : STRING[80];
+	MpRecipeXml_0 : MpRecipeXml;
+	MpRecipeRegPar_0 : MpRecipeRegPar;
+	MpFileMngSetup : MpFileManagerUISetupType;
+	MpFileMngConnectR : MpFileManagerUIConnectType;
+	MpFileManagerUI_R : MpFileManagerUI;
+	messageType : STRING[80];
+	makeWarning : USINT;
+	iFile : INT;
+	i : INT;
+	clear : BOOL;
+END_VAR

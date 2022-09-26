@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">ComauRozsierdzony.png</Object>
+    <Object Type="File">Comau._Axis5.png</Object>
+    <Object Type="File">Comau._Axis4.png</Object>
+    <Object Type="File">Comau._Axis3.png</Object>
+    <Object Type="File">Comau._Axis2.png</Object>
+    <Object Type="File">Comau._Axis1.png</Object>
+    <Object Type="File">Comau._Axis0.png</Object>
+    <Object Type="File">Comau.png</Object>
+  </Objects>
+</Package>

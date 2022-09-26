@@ -3,13 +3,11 @@
   <StartPage pageRefId="MainPage" />
   <Pages>
     <Page refId="MainPage" />
-    <Page refId="AutoPage" />
     <Page refId="ManualPage" />
     <Page refId="AlarmPage" />
     <Page refId="AuditPage" />
     <Page refId="PackMLPage" />
     <Page refId="RecepturePage" />
-    <Page refId="UsersPage" />
     <Page refId="FilesPage" />
   </Pages>
   <Navigations />
@@ -19,10 +17,12 @@
     <BindingsSet refId="AlarmContent_binding" />
     <BindingsSet refId="ManualContent_binding" />
     <BindingsSet refId="LoginContent_binding" />
-    <BindingsSet refId="AutoContent_binding" />
-    <BindingsSet refId="FilesContent_binding" />
     <BindingsSet refId="ReceptureContent_binding" />
     <BindingsSet refId="AuditContent_binding" />
+    <BindingsSet refId="content_1_binding" />
+    <BindingsSet refId="AutoContent_binding" />
+    <BindingsSet refId="FilesContent_binding" />
+    <BindingsSet refId="SwapDialog_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="TopContent_eventbinding" />
@@ -36,11 +36,13 @@
     <EventBindingsSet refId="ReceptureContent_eventbinding" />
     <EventBindingsSet refId="FilesContent_eventbinding" />
     <EventBindingsSet refId="AuditContent_eventbinding" />
-	</EventBindingsSets>
+    <EventBindingsSet refId="SwapDialog_eventbinding" />
+  </EventBindingsSets>
   <Dialogs>
     <Dialog refId="LoginDialog" />
     <Dialog refId="InfoDialog" />
     <Dialog refId="TiaPortalDialog" />
+    <Dialog refId="SWAP" />
   </Dialogs>
   <Contents>
     <Content refId="LeftContent" />
@@ -49,21 +51,22 @@
     <Content refId="AuditContent" />
     <Content refId="PackMLContent" />
     <Content refId="ReceptureContent" />
-    <Content refId="UsersContent" />
     <Content refId="LoginContent" />
     <Content refId="MainContent" />
-    <Content refId="AutoContent" />
     <Content refId="ManualContent" />
     <Content refId="InfoContent" />
     <Content refId="FilesContent" />
     <Content refId="TiaPortalContent" />
+    <Content refId="SwapDialog" />
   </Contents>
   <SnippetsSets />
-  <VariablesSets />
+  <VariablesSets>
+    <VariablesSet refId="svar_0" />
+  </VariablesSets>
   <ExpressionsSets />
   <Configurations>
-		<Configuration key="activityCount" value="false" />
-		<Configuration key="zoom" value="true" />
+    <Configuration key="activityCount" value="false" />
+    <Configuration key="zoom" value="true" />
     <Gestures>
       <!--<SystemGesture1 touchPoints="2" />
 		  <SystemGesture2 touchPoints="2" />

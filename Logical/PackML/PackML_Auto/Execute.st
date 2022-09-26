@@ -209,7 +209,6 @@ ACTION Execute:
 				END_IF 
 				
 			ROBOTCTRL_SWAP:	
-				//todo
 				gSwapFlag:=FALSE;
 				HelpfulInt:=0;
 				FOR x:=0 TO SizeOfArray DO 

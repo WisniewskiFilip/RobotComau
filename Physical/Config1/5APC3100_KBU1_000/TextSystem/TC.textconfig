@@ -10,9 +10,9 @@
       </Group>
     </Group>
     <Group ID="TargetFiles">
-      <Property ID="TargetFile[1]" Value="AuditPckg.Event.tmx" />
-      <Property ID="TargetFile[2]" Value="AuditPckg.User.tmx" />
-      <Property ID="TargetFile[3]" Value="AuditPckg.Recipe.tmx" />
+      <Property ID="TargetFile[1]" Value="Services.AuditPckg.User.tmx" />
+      <Property ID="TargetFile[2]" Value="Services.AuditPckg.Event.tmx" />
+      <Property ID="TargetFile[3]" Value="Services.AuditPckg.Recipe.tmx" />
     </Group>
   </Element>
 </Configuration>

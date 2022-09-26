@@ -63,5 +63,70 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:Camera_0.diTrigger" attribute="value" />
 <Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton1" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.Power" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="Rectangle24" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.Info.ReadyToPowerOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="Rectangle27" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.IsHomed" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="Rectangle21" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.MoveProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="Rectangle26" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gCompliteFlag" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="Rectangle29" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.Error" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="Rectangle22" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:doVisError" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="Rectangle25" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:PackML_State" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="TextOutput1" attribute="value" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:diAck" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton7" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.ErrorReset" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton8" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:diStop" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton3" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:diStart" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:diReset" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.Home" attribute="value" />
+<Target xsi:type="brease" contentRefId="MainContent" widgetRefId="MomentaryPushButton9" attribute="value" />
+</Binding>
+
+
+
+
+
+
+
 </Bindings>
 </BindingsSet>

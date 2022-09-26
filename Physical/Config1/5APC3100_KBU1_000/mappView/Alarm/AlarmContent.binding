@@ -6,10 +6,7 @@
 			<Source xsi:type="mapp" refId="gAlarmXCore0" attribute="link" />
 			<Target xsi:type="brease" contentRefId="AlarmContent" widgetRefId="AlarmList1" attribute="mpLink" />
 		</Binding>
-	<Binding mode="twoWay">
-<Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
-<Target xsi:type="brease" contentRefId="AlarmContent" widgetRefId="AlarmHistory1" attribute="mpLink" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.ErrorReset" attribute="value" />
 <Target xsi:type="brease" contentRefId="AlarmContent" widgetRefId="btnAcknowledgeAll" attribute="value" />
@@ -18,9 +15,11 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:MpRoboArm6Axis_0.ErrorReset" attribute="value" />
 <Target xsi:type="brease" contentRefId="AlarmContent" widgetRefId="btnAcknowledge" attribute="value" />
 </Binding>
+
+
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AlarmClear:ClearHistory" attribute="value" />
-<Target xsi:type="brease" contentRefId="AlarmContent" widgetRefId="btnClearHistory" attribute="value" />
+<Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
+<Target xsi:type="brease" contentRefId="AlarmContent" widgetRefId="AlarmHistory1" attribute="mpLink" />
 </Binding>
 </Bindings>
 </BindingsSet>

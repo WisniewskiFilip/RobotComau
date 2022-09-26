@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="MainContent" height="650" width="1030" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.TabControl" id="TabControl1" top="0" left="0" width="1040" height="660" zIndex="2">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem1" left="0" zIndex="0" text="VISION">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton1" top="150" left="80" width="200" height="110" zIndex="0" text="ZRÓB ZDJĘCIE" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="20px" bold="true" />
+            <Widget xsi:type="widgets.brease.Label" id="lblError" top="10" left="300" width="480" height="60" zIndex="1" text="ROBOT ZASŁANIA KAMERĘ" cornerRadius="10px" backColor="rgba(220, 220, 220, 1)" textColor="rgba(255, 0, 0, 1)" fontSize="30px" bold="true" visible="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare13" top="350" left="40" height="100" zIndex="2" text="13" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare12" top="350" left="180" height="100" zIndex="3" text="12" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare11" top="350" left="320" height="100" zIndex="4" text="11" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare10" top="350" left="460" height="100" zIndex="5" text="10" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare9" top="350" left="600" height="100" zIndex="6" text="9" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare8" top="350" left="740" height="100" zIndex="7" text="8" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare7" top="350" left="880" height="100" zIndex="8" text="7" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare6" top="490" left="40" height="100" zIndex="9" text="6" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare5" top="490" left="180" height="100" zIndex="10" text="5" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare4" top="490" left="320" height="100" zIndex="11" text="4" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare3" top="490" left="460" height="100" zIndex="12" text="3" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare2" top="490" left="600" height="100" zIndex="13" text="2" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare1" top="490" left="740" height="100" zIndex="14" text="1" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.ToggleButton" id="TgBtnSquare0" top="490" left="880" height="100" zIndex="15" text="0" disabledBackColor="rgba(255, 255, 255, 0)" fontSize="40px" bold="true" checkedBackColor="rgba(0, 0, 0, 1)" checkedTextColor="rgba(255, 255, 255, 1)" disabledCheckedBackColor="rgba(0, 0, 0, 1)" enable="false" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare0" top="490" left="880" width="100" zIndex="16" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare1" top="490" left="740" width="100" zIndex="17" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare2" top="490" left="600" width="100" zIndex="18" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare3" top="490" left="460" width="100" zIndex="19" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare4" top="490" left="320" width="100" zIndex="20" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare5" top="490" left="180" width="100" zIndex="21" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare6" top="490" left="40" width="100" zIndex="22" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare7" top="350" left="880" width="100" zIndex="23" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare8" top="350" left="740" width="100" zIndex="24" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare9" top="350" left="600" width="100" zIndex="25" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare10" top="350" left="460" width="100" zIndex="26" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare11" top="350" left="320" width="100" zIndex="27" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare12" top="350" left="180" width="100" zIndex="28" />
+            <Widget xsi:type="widgets.brease.Image" id="ImgSquare13" top="350" left="40" width="100" zIndex="29" />
+            <Widget xsi:type="widgets.brease.ImageList" id="ImageList1" top="70" left="420" width="240" height="270" zIndex="30" imageList="['Media/Images/Comau.png', 'Media/Images/ComauRozsierdzony.png']" />
+          </Widgets>
+        </Widget>
+        <Widget xsi:type="widgets.brease.TabItem" id="TabItem2" left="0" zIndex="1" text="AUTO">
+          <Widgets>
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="190" left="100" width="40" height="40" zIndex="0" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(224, 224, 224, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="Label1" top="190" left="160" width="140" height="40" zIndex="1" text="IS HOMED" borderStyle="inset" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle3" top="130" left="100" width="40" height="40" zIndex="2" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(224, 224, 224, 1)" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle4" top="250" left="100" width="40" height="40" zIndex="3" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(224, 224, 224, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="Label3" top="130" left="160" width="100" height="40" zIndex="4" text="POWER" wordWrap="true" borderStyle="inset" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Label" id="Label4" top="250" left="160" width="180" height="40" zIndex="5" text="MOVE PROGRAM" borderStyle="inset" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle6" top="430" left="100" width="40" height="40" zIndex="6" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(224, 224, 224, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="Label6" top="430" left="160" width="100" height="40" zIndex="7" text="ERROR" borderStyle="inset" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle21" top="190" left="100" width="40" height="40" zIndex="8" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(255, 128, 0, 1)" visible="false" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle22" top="430" left="100" width="40" height="40" zIndex="9" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(255, 0, 0, 1)" visible="false" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle24" top="130" left="100" width="40" height="40" zIndex="10" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(255, 128, 0, 1)" visible="false" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle26" top="250" left="100" width="40" height="40" zIndex="11" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(255, 128, 0, 1)" visible="false" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle7" top="490" left="100" width="40" height="40" zIndex="12" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(224, 224, 224, 1)" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle25" top="490" left="100" width="40" height="40" zIndex="13" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(255, 0, 0, 1)" visible="false" />
+            <Widget xsi:type="widgets.brease.Label" id="Label7" top="490" left="160" width="180" height="40" zIndex="14" text="VISION ERROR" borderStyle="inset" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton2" top="290" left="480" width="220" height="120" zIndex="15" text="START" borderStyle="inset" cornerRadius="10px" backColor="rgba(0, 255, 0, 1)" fontSize="16px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton3" top="430" left="480" width="220" height="120" zIndex="16" text="STOP" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 0, 0, 1)" fontSize="16px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="150" left="480" width="220" height="120" zIndex="17" text="RESET" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
+            <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput1" top="575" left="780" width="250" height="20" zIndex="18" value="STOPPED" fontSize="26px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton7" top="430" left="720" width="220" height="120" zIndex="19" text="RESET VISON ERROR" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton8" top="290" left="720" width="220" height="120" zIndex="20" text="RESET STOP" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
+            <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton9" top="10" left="480" width="220" height="120" zIndex="21" text="HOME" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle5" top="70" left="100" width="40" height="40" zIndex="22" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(224, 224, 224, 1)" />
+            <Widget xsi:type="widgets.brease.Label" id="Label5" top="70" left="160" width="200" height="40" zIndex="23" text="SAFETY READY" borderStyle="inset" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle27" top="70" left="100" width="40" height="40" zIndex="24" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(255, 128, 0, 1)" visible="false" />
+            <Widget xsi:type="widgets.brease.Button" id="SWAP" top="8" left="718" width="220" height="120" zIndex="25" text="SWAP" wordWrap="true" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" margin="2px" />
+            <Widget xsi:type="widgets.brease.Button" id="SWAP1" top="148" left="718" width="220" height="120" zIndex="26" text="DEMO MOVE" wordWrap="true" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" fontSize="16px" bold="true" margin="2px" />
+            <Widget xsi:type="widgets.brease.Label" id="Label8" top="310" left="160" width="220" height="40" zIndex="27" text="PROGRAM COMPLITE" borderStyle="inset" fontSize="18px" bold="true" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle8" top="310" left="100" width="40" height="40" zIndex="28" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(224, 224, 224, 1)" />
+            <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle29" top="310" left="100" width="40" height="40" zIndex="29" borderStyle="inset" borderWidth="2px" cornerRadius="10px" backColor="rgba(0, 255, 0, 1)" visible="false" />
+            <Widget xsi:type="widgets.brease.Label" id="Label2" top="570" left="440" width="500" zIndex="30" text="ROBOT PACKML  STATE :" fontSize="26px" bold="true" />
+            <Widget xsi:type="widgets.brease.Button" id="SWAP2" top="148" left="718" width="220" height="120" zIndex="31" text="DEMO MOVE" borderStyle="inset" cornerRadius="10px" backColor="rgba(255, 192, 128, 1)" fontSize="16px" bold="true" margin="2px" visible="false" />
+          </Widgets>
+        </Widget>
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>

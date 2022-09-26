@@ -447,19 +447,118 @@
           <Method xsi:type="opcUa.NodeAction.GetValue" />
         </ReadTarget>
       </Operand>
-      <EventHandler condition="X &lt; 450 AND Z &gt; 550">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="MainContent" widgetRefId="lblError">
-            <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="false" />
-          </Target>
-        </Action>
+      <EventHandler condition="X &lt; 450 ">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Label.Action" contentRefId="MainContent" widgetRefId="lblError">
+                <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="MainContent" widgetRefId="ImageList1">
+                <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="0" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
       </EventHandler>
-      <EventHandler condition="X  &gt; 450 AND Z &lt; 550">
-        <Action>
-          <Target xsi:type="widgets.brease.Label.Action" contentRefId="MainContent" widgetRefId="lblError">
-            <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="true" />
-          </Target>
-        </Action>
+      <EventHandler condition="X  &gt; 450 ">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="widgets.brease.Label.Action" contentRefId="MainContent" widgetRefId="lblError">
+                <Method xsi:type="widgets.brease.Label.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="MainContent" widgetRefId="ImageList1">
+                <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="1" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="MainContent.SWAP.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="MainContent" widgetRefId="SWAP" event="Click" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSwapFlag">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="clientSystem.Action">
+                <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="SWAP" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="MainContent.SWAP1.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="MainContent" widgetRefId="SWAP1" event="Click" />
+      <EventHandler>
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:diDemo">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="MainContent" widgetRefId="SWAP1">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="MainContent" widgetRefId="SWAP2">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_7">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="MainContent" widgetRefId="SWAP2" event="Click" />
+      <EventHandler>
+        <Sequence>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:diDemo">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="2">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="MainContent" widgetRefId="SWAP1">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="true" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="3">
+            <Action>
+              <Target xsi:type="widgets.brease.Button.Action" contentRefId="MainContent" widgetRefId="SWAP2">
+                <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
       </EventHandler>
     </EventBinding>
   </Bindings>

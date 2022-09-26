@@ -54,29 +54,6 @@
           </Result>
         </Action>
       </EventHandler>
-      <EventHandler condition="GetMessage =&quot;BUSY&quot;">
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.ShowMessageBox" type="OKCancel" message="Czy chcesz nadpisac plik?" header="UWAGA" />
-          </Target>
-          <Result>
-            <ResultHandler condition="result=4">
-              <Action>
-                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Confirm">
-                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-            <ResultHandler condition="result=8">
-              <Action>
-                <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.MessageBox.Cancel">
-                  <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-                </Target>
-              </Action>
-            </ResultHandler>
-          </Result>
-        </Action>
-      </EventHandler>
     </EventBinding>
     <EventBinding id="EventBinding_10">
       <Source xsi:type="clientSystem.Event" event="ContentLoaded" />
@@ -84,6 +61,749 @@
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::File_explo:MpFileMngConnect.File.Refresh">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.btnAddUser.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="FilesContent" widgetRefId="btnAddUser" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="FilesContent" widgetRefId="UserList">
+            <Method xsi:type="widgets.brease.UserList.Action.OpenModifyUserDialog" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.btnEditUser.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="FilesContent" widgetRefId="btnEditUser" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="FilesContent" widgetRefId="UserList">
+            <Method xsi:type="widgets.brease.UserList.Action.OpenAddUserDialog" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.btnDeleteUser.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="FilesContent" widgetRefId="btnDeleteUser" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.UserList.Action" contentRefId="FilesContent" widgetRefId="UserList">
+            <Method xsi:type="widgets.brease.UserList.Action.DeleteUser" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.MomentaryPushButton6.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="FilesContent" widgetRefId="MomentaryPushButton6" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Axis">
+            <Method xsi:type="opcUa.NodeAction.AddValue" value="1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.MomentaryPushButton5.Click">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="FilesContent" widgetRefId="MomentaryPushButton5" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:Axis">
+            <Method xsi:type="opcUa.NodeAction.AddValue" value="-1" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_12">
+      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:Axis" event="ValueChanged" />
+      <Operand datatype="ANY_INT" name="Selector">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:Axis">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="Selector=0">
+        <Action>
+          <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="FilesContent" widgetRefId="ImageList1">
+            <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="0" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="Selector=1">
+        <Action>
+          <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="FilesContent" widgetRefId="ImageList1">
+            <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="1" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="Selector=2">
+        <Action>
+          <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="FilesContent" widgetRefId="ImageList1">
+            <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="2" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="Selector=3">
+        <Action>
+          <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="FilesContent" widgetRefId="ImageList1">
+            <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="3" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="Selector=4">
+        <Action>
+          <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="FilesContent" widgetRefId="ImageList1">
+            <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="4" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="Selector=5">
+        <Action>
+          <Target xsi:type="widgets.brease.ImageList.Action" contentRefId="FilesContent" widgetRefId="ImageList1">
+            <Method xsi:type="widgets.brease.ImageList.Action.SetSelectedIndex" index="5" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.MomentaryPushButton3.MouseUp">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="FilesContent" widgetRefId="MomentaryPushButton3" event="MouseUp" />
+      <Operand datatype="ANY_REAL" name="Vel">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQQ">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity1">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ1">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity2">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ2">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity3">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ3">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity4">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ4">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity5">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ5">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity6">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ6">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_INT" name="Selector">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:Axis">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="Selector=0">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ1">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=1">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ2">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=2">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ3">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=3">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ4">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=4">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ5">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=5">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ6">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_14">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="FilesContent" widgetRefId="MomentaryPushButton3" event="MouseDown" />
+      <Operand datatype="ANY_REAL" name="Vel">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQQ">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity1">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ1">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity2">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ2">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity3">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ3">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity4">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ4">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity5">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ5">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity6">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ6">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_INT" name="Selector">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:Axis">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="Selector=0">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ1">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=1">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ2">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=2">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ3">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=3">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ4">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=4">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ5">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=5">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ6">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.MomentaryPushButton4.MouseDown">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="FilesContent" widgetRefId="MomentaryPushButton4" event="MouseDown" />
+      <Operand datatype="ANY_REAL" name="Vel">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQQ">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity1">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ1">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity2">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ2">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity3">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ3">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity4">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ4">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity5">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ5">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity6">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ6">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_INT" name="Selector">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:Axis">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="Selector=0">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ1">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=-Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=1">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ2">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=-Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=2">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ3">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=-Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=3">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ4">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=-Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=4">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ5">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=-Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=5">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ6">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=-Vel" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_15">
+      <Source xsi:type="widgets.brease.MomentaryPushButton.Event" contentRefId="FilesContent" widgetRefId="MomentaryPushButton4" event="MouseUp" />
+      <Operand datatype="ANY_REAL" name="Vel">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQQ">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity1">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ1">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity2">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ2">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity3">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ3">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity4">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ4">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity5">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ5">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_REAL" name="Velocity6">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:VelocityQ6">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <Operand datatype="ANY_INT" name="Selector">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:Axis">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="Selector=0">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ1">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=1">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ2">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=2">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ3">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=3">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ4">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=4">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ5">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+      <EventHandler condition="Selector=5">
+        <Sequence>
+          <Step order="0">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:VelocityQ6">
+                <Method xsi:type="opcUa.NodeAction.SetValueNumber" value="0" />
+              </Target>
+            </Action>
+          </Step>
+          <Step order="1">
+            <Action>
+              <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Jog">
+                <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+              </Target>
+            </Action>
+          </Step>
+        </Sequence>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="FilesContent.Button1.Click">
+      <Source xsi:type="widgets.brease.Button.Event" contentRefId="FilesContent" widgetRefId="Button1" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:MpRoboArm6Axis_0.Home">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_16">
+      <Source xsi:type="opcUa.Event" refId="::AsGlobalPV:Axis" event="ValueChanged" />
+      <Operand datatype="ANY_INT" name="Selector">
+        <ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:Axis">
+          <Method xsi:type="opcUa.NodeAction.GetValue" />
+        </ReadTarget>
+      </Operand>
+      <EventHandler condition="Selector=5">
+        <Action>
+          <Target xsi:type="widgets.brease.Button.Action" contentRefId="FilesContent" widgetRefId="Button1">
+            <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler condition="Selector&lt;&gt;5">
+        <Action>
+          <Target xsi:type="widgets.brease.Button.Action" contentRefId="FilesContent" widgetRefId="Button1">
+            <Method xsi:type="widgets.brease.Button.Action.SetVisible" value="false" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.TextOutput.Action" contentRefId="FilesContent" widgetRefId="TextOutput1">
+            <Method xsi:type="widgets.brease.TextOutput.Action.SetValue" value="=newValue" />
           </Target>
         </Action>
       </EventHandler>

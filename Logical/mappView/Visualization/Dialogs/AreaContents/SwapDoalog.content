@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="SwapDialog" height="300" width="580" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="35" left="130" width="320" zIndex="0" text="SELECT TWO ITEMS TO SWAP" fontSize="20px" bold="true" />
+    <Widget xsi:type="widgets.brease.Line" id="Line1" zIndex="1" x1="0" x2="580" y1="80" y2="80" lineColor="rgba(255, 128, 0, 1)" lineWidth="10px" />
+    <Widget xsi:type="widgets.brease.Line" id="Line2" zIndex="2" x1="0" x2="580" y1="260" y2="260" lineColor="rgba(255, 128, 0, 1)" lineWidth="10px" />
+    <Widget xsi:type="widgets.brease.Line" id="Line3" zIndex="3" x1="0" x2="580" y1="20" y2="20" lineColor="rgba(255, 128, 0, 1)" lineWidth="10px" />
+    <Widget xsi:type="widgets.brease.GroupBox" id="GroupBox1" top="80" left="0" width="580" height="180" zIndex="4" backColor="rgba(255, 255, 255, 0)" headerBackColor="rgba(255, 255, 255, 0)" imageColor="rgba(0, 0, 0, 1)">
+      <Widgets>
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton1" top="19" left="19" width="60" height="60" zIndex="0" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="99" left="19" width="60" height="60" zIndex="1" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton3" top="19" left="99" width="60" height="60" zIndex="2" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton4" top="99" left="99" width="60" height="60" zIndex="3" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton5" top="19" left="179" width="60" height="60" zIndex="4" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton6" top="99" left="179" width="60" height="60" zIndex="5" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton7" top="19" left="259" width="60" height="60" zIndex="6" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton8" top="99" left="259" width="60" height="60" zIndex="7" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton9" top="19" left="339" width="60" height="60" zIndex="8" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton10" top="99" left="339" width="60" height="60" zIndex="9" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton11" top="19" left="419" width="60" height="60" zIndex="10" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton12" top="99" left="419" width="60" height="60" zIndex="11" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton13" top="19" left="499" width="60" height="60" zIndex="12" backColor="rgba(0, 0, 0, 1)" visible="false" />
+        <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton14" top="99" left="499" width="60" height="60" zIndex="13" backColor="rgba(0, 0, 0, 1)" visible="false" />
+      </Widgets>
+    </Widget>
+  </Widgets>
+</Content>
