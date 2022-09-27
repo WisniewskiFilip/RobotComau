@@ -5,6 +5,5 @@
     <Object Type="File">LoginContent.content</Object>
     <Object Type="File">InfoContent.content</Object>
     <Object Type="File">SwapDoalog.content</Object>
-    <Object Type="File">TiaPortal.content</Object>
   </Objects>
 </Package>

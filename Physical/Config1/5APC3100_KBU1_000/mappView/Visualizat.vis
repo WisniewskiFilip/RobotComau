@@ -55,7 +55,6 @@
     <Content refId="ManualContent" />
     <Content refId="InfoContent" />
     <Content refId="FilesContent" />
-    <Content refId="TiaPortalContent" />
     <Content refId="SwapDialog" />
   </Contents>
   <SnippetsSets />

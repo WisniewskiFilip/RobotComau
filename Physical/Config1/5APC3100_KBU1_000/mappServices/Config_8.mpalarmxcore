@@ -91,7 +91,7 @@
       </Group>
       <Group ID="[5]">
         <Property ID="Name" Value="HomeERROR" />
-        <Property ID="Message" Value="Home Poses has not been read from retain memory" />
+        <Property ID="Message" Value="Home Positions has not been read from retain memory" />
         <Property ID="Code" Value="101" />
         <Selector ID="Behavior" Value="LevelMonitoring">
           <Group ID="Monitoring">
@@ -111,7 +111,7 @@
           <Group ID="Monitoring">
             <Property ID="MonitoredPV" Value="::MpRoboArm6Axis_0.X" />
             <Selector ID="HighLimitEnable" Value="Static">
-              <Property ID="Limit" Value="410" />
+              <Property ID="Limit" Value="400" />
               <Property ID="LimitText" Value="Robot in ROI" />
             </Selector>
           </Group>
