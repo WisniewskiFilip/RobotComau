@@ -41,7 +41,6 @@
   <Dialogs>
     <Dialog refId="LoginDialog" />
     <Dialog refId="InfoDialog" />
-    <Dialog refId="TiaPortalDialog" />
     <Dialog refId="SWAP" />
   </Dialogs>
   <Contents>

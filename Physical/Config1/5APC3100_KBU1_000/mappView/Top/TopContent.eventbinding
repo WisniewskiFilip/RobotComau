@@ -52,15 +52,6 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="TopContent.Image1.Click">
-      <Source xsi:type="widgets.brease.Image.Event" contentRefId="TopContent" widgetRefId="Image1" event="Click" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="clientSystem.Action">
-            <Method xsi:type="clientSystem.Action.OpenDialog" dialogId="TiaPortalDialog" headerText="SIEMENS" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
-  </Bindings>
+    
+	</Bindings>
 </EventBindingSet>

@@ -5,7 +5,6 @@
     <Object Type="Package" Description="AreaContents">AreaContents</Object>
     <Object Type="Package">LoginDialog</Object>
     <Object Type="Package">InfoDialog</Object>
-    <Object Type="Package">TiaPortal</Object>
     <Object Type="Package">SWAP</Object>
   </Objects>
 </Package>
