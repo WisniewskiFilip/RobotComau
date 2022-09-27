@@ -45,7 +45,7 @@
     <Widget xsi:type="widgets.brease.Button" id="ClearAimPosBTN" top="560" left="400" width="220" height="80" zIndex="34" text="CLEAR" borderStyle="ridge" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" textColor="rgba(255, 255, 255, 1)" fontSize="30px" bold="false" />
     <Widget xsi:type="widgets.brease.Button" id="LOADBTN" top="560" left="720" width="220" height="80" zIndex="35" text="LOAD" borderStyle="ridge" cornerRadius="10px" backColor="rgba(255, 140, 0, 1)" textColor="rgba(255, 255, 255, 1)" fontSize="30px" bold="false" />
     <Widget xsi:type="widgets.brease.ImageList" id="ImageList1" top="140" left="460" width="220" height="200" zIndex="36" imageList="['Media/SymbolLib/ScrewWasher.png', 'Media/SymbolLib/Wrench.png', 'Media/SymbolLib/Screw.png', '']" />
-    <Widget xsi:type="widgets.brease.Table" id="Table1" top="0" left="720" width="320" height="380" zIndex="37" refreshRate="100" cornerRadius="10px">
+    <Widget xsi:type="widgets.brease.Table" id="Table1" top="20" left="720" width="320" height="340" zIndex="37" refreshRate="100" cornerRadius="10px">
       <Widgets>
         <Widget xsi:type="widgets.brease.TableItem" id="tiName" zIndex="0" columnWidth="180" text="Nazwa" />
       </Widgets>
